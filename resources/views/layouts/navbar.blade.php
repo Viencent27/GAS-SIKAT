@@ -7,16 +7,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inovasi</a>
+                    <a class="nav-link {{ Request::is('inovasi') ? 'active' : '' }}" href="/inovasi">Inovasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Upload Inovasi</a>
+                    <a class="nav-link {{ Request::is('upload-inovasi') ? 'active' : '' }}" href="/upload-inovasi">Upload Inovasi</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tentang Kami</a>
+                    <a class="nav-link {{ Request::is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a>
                 </li>
             </ul>
             <button class="btn btn-primary">Login</button>

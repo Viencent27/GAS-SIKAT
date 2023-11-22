@@ -16,3 +16,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('landing-page');
 });
+
+Route::get('/inovasi', function () {
+    return view('list-inovasi');
+});
+
+Route::get('/upload-inovasi', function () {
+    return view('form-inovasi');
+});
+
+Route::get('/tentang-kami', function () {
+    return view('tentang-kami');
+});
