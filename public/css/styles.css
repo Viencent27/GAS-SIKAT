@@ -19,16 +19,163 @@ a.navbar-brand {
     font-weight: bold;
     font-size: 28px;
     margin: 0;
+    color: #141E46;
 }
+
+a.nav-link {
+    color: rgba(20, 30, 70, 0.8);
+    font-weight: 500;
+    position: relative;
+}
+
+a.nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #FF6969;
+    margin-top: 2px;
+    transition: width 0.3s ease;
+}
+
+a.nav-link:hover::after {
+    color: rgba(20, 30, 70, 1);
+    width: 100%;
+}
+
+a.nav-link.active {
+    font-weight: 600;
+}
+
+a.nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #FF6969;
+    margin-top: 2px;
+}
+
 
 .btn-primary {
     background-color: #FF6969;
     border-radius: 3px;
+    border-color: transparent;
     padding: 8px 22px;
+}
+
+.btn-primary:hover {
+    background-color: #E25151;
+    border-color: transparent;
+}
+
+h2.title {
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+}
+
+h2.title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #FF6969;
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 main {
     flex: 1;
+}
+
+main .hero,
+main .innovation-gallery {
+    background-color: #EEE;
+}
+
+main .hero .row {
+    min-height: 640px;
+}
+
+main .hero-text h1 {
+    font-weight: 700;
+    font-size: 45px;
+}
+
+main .hero-text p {
+    font-weight: 500;
+}
+
+main .hero-text p span {
+    color: #FF6969;
+    font-weight: 600;
+}
+
+main .hero-image img {
+    max-width: 600px;
+}
+
+/* main .features .feature img {
+    max-width: 100px;
+} */
+
+main .innovation-gallery .innovation-item {
+    border-color: transparent;
+    border-radius: 3px;
+    color: #141E46;
+}
+
+main .innovation-gallery .innovation-item .date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #FF6969;
+    padding: 6px 12px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+main .innovation-gallery .innovation-item h5 {
+    font-weight: 700;
+}
+
+main .innovation-gallery .innovation-item p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E7E7E;
+}
+
+main .innovation-gallery .innovation-item p i {
+    font-size: 16px;
+    color: #FF6969;
+}
+
+main .innovation-gallery .innovation-item p span {
+    margin-inline: 10px;
+}
+
+main .innovation-gallery .innovation-item a {
+    padding: 0;
+    font-weight: 600;
+    color: #7E7E7E;
+}
+
+main .information .info-item {
+    background-color: #EEE;
+    border-radius: 3px;
+}
+
+main .information .info-item .icon i {
+    font-size: 40px;
+    color: #FF6969;
+}
+
+main .information .col.info-item {
+    max-width: 240px;
 }
 
 footer {
