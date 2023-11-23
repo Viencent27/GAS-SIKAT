@@ -248,6 +248,28 @@ main .search-inovasi {
     max-width: 400px;
 }
 
+main .tentang-kami p {
+    max-width: 550px;
+}
+
+main .tentang-kami .team-member {
+    border: 0;
+}
+
+main .tentang-kami .team-member img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 7px 7px 0 0;
+}
+
+@media (max-width: 1199px) {
+    main .tentang-kami .team-member img {
+        height: 300px;
+    }
+}
+
 footer {
     background-color: #EEE;
 }
