@@ -248,6 +248,31 @@ main .search-inovasi {
     max-width: 400px;
 }
 
+/* Form */
+
+#deskripsi {
+    height: 135px;
+}
+
+.btn-outline-primary {
+    color: black;
+    border-radius: 3px;
+    border-color: #FF6969;
+    padding: 8px 22px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+      background-color: #E25151;
+      border-color: transparent;
+}
+
+.outline-primary {
+    border-color: #FF6969;
+}
+
+
 footer {
     background-color: #EEE;
 }
