@@ -9,7 +9,7 @@ body {
     flex-direction: column;
 }
 
-nav {
+nav.navbar {
     min-height: 80px;
     background-color: white;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -26,6 +26,7 @@ a.nav-link {
     color: rgba(20, 30, 70, 0.8);
     font-weight: 500;
     position: relative;
+    padding-inline: 14px !important;
 }
 
 a.nav-link::after {
@@ -128,7 +129,7 @@ main .hero-text p span {
 }
 
 main img.hero-image {
-    max-width: 600px;
+    max-width: 550px;
 }
 
 @media (max-width: 575px) {
@@ -139,13 +140,21 @@ main img.hero-image {
     }
 }
 
-main .innovation-gallery .innovation-item {
+main .innovation-item {
     border-color: transparent;
     border-radius: 3px;
     color: #141E46;
 }
 
-main .innovation-gallery .innovation-item .date {
+main .innovation-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 3px 3px 0 0;
+}
+
+main .innovation-item .date {
     position: absolute;
     right: 0;
     bottom: 0;
@@ -156,29 +165,69 @@ main .innovation-gallery .innovation-item .date {
     font-size: 14px;
 }
 
-main .innovation-gallery .innovation-item h5 {
+main .innovation-item h5 {
     font-weight: 700;
 }
 
-main .innovation-gallery .innovation-item p {
+main .innovation-item p {
     font-size: 14px;
     font-weight: 500;
     color: #7E7E7E;
 }
 
-main .innovation-gallery .innovation-item p i {
+main .innovation-item p i {
     font-size: 16px;
     color: #FF6969;
 }
 
-main .innovation-gallery .innovation-item p span {
+main .innovation-item p span {
     margin-inline: 10px;
 }
 
-main .innovation-gallery .innovation-item a {
+main .innovation-item .card-body {
+    padding-bottom: 0;
+}
+
+main .innovation-item .card-footer {
+    background-color: transparent;
+    border: 0px;
+    padding: 0 16px 16px 16px;
+}
+
+main .innovation-item .card-footer hr {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+main .innovation-item .card-footer a {
     padding: 0;
     font-weight: 600;
     color: #7E7E7E;
+}
+
+main .innovation-item:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08);
+}
+
+main .innovation-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+main .innovation-item img {
+    transition: transform 0.3s ease;
+}
+
+main .innovation-item a:hover {
+    color: #FF6969;
+}
+
+main .shadow.innovation-item {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+}
+
+main .shadow.innovation-item:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175) !important;
 }
 
 main .information .info-item {
@@ -193,6 +242,10 @@ main .information .info-item .icon i {
 
 main .information .col.info-item {
     max-width: 240px;
+}
+
+main .search-inovasi {
+    max-width: 400px;
 }
 
 footer {

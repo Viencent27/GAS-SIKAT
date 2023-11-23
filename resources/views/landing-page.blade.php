@@ -44,7 +44,7 @@
                     cumque dolore fuga accusantium, ex ullam! Explicabo.
                 </p>
             </div>
-            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/innovation.svg') }}" alt="">
+            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
         </div>
         <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
             <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/innovation.svg') }}" alt="">
@@ -66,14 +66,16 @@
         <h2 class="title">Galeri Inovasi</h2>
         <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center g-4 my-4">
             <div class="col">
-                <div class="card innovation-item">
+                <div class="card h-100 innovation-item">
                     <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/innovation.svg') }}" alt="">
+                        <img src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
                         <span class="date">23 November</span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Judul Inovasi</h5>
+                        <h5 class="card-title">Judul untuk Inovasi Pertama</h5>
                         <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                    </div>
+                    <div class="card-footer">
                         <hr>
                         <a class="btn detail-button" href="">Baca Selengkapnya -></a>
                     </div>
@@ -81,7 +83,7 @@
             </div>
 
             <div class="col">
-                <div class="card innovation-item">
+                <div class="card h-100 innovation-item">
                     <div class="position-relative overflow-hidden">
                         <img src="{{ asset('images/innovation.svg') }}" alt="">
                         <span class="date">23 November</span>
@@ -89,6 +91,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Judul Inovasi</h5>
                         <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                    </div>
+                    <div class="card-footer">
                         <hr>
                         <a class="btn detail-button" href="">Baca Selengkapnya -></a>
                     </div>
@@ -96,14 +100,16 @@
             </div>
 
             <div class="col">
-                <div class="card innovation-item">
+                <div class="card h-100 innovation-item">
                     <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/innovation.svg') }}" alt="">
+                        <img src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
                         <span class="date">23 November</span>
                     </div>
                     <div class="card-body">
-                        <h5 class="card-title">Judul Inovasi</h5>
+                        <h5 class="card-title">Judul untuk Inovasi Pertama</h5>
                         <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                    </div>
+                    <div class="card-footer">
                         <hr>
                         <a class="btn detail-button" href="">Baca Selengkapnya -></a>
                     </div>
@@ -111,7 +117,7 @@
             </div>
 
             <div class="col">
-                <div class="card innovation-item">
+                <div class="card h-100 innovation-item">
                     <div class="position-relative overflow-hidden">
                         <img src="{{ asset('images/innovation.svg') }}" alt="">
                         <span class="date">23 November</span>
@@ -119,6 +125,8 @@
                     <div class="card-body">
                         <h5 class="card-title">Judul Inovasi</h5>
                         <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                    </div>
+                    <div class="card-footer">
                         <hr>
                         <a class="btn detail-button" href="">Baca Selengkapnya -></a>
                     </div>
