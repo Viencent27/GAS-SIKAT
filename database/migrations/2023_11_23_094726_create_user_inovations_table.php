@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('publisher_name');
             $table->date('release_date');
             $table->text('description');
-            $table->string('video');
+            $table->string('link_video');
             $table->binary('photo')->nullable();
             $table->timestamps();
         });

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('title');
             $table->date('release_date');
             $table->text('description');
-            $table->string('video');
+            $table->string('link_video');
             $table->binary('photo')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
