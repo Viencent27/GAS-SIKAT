@@ -10,4 +10,6 @@ class User_inovation extends Model
     use HasFactory;
 
     protected $guarded = ['id'];
+
+    protected $table = 'user_inovations';
 }
