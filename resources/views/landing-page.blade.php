@@ -65,73 +65,24 @@
     <div class="container pt-5 pb-5">
         <h2 class="title">Galeri Inovasi</h2>
         <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center g-4 my-4">
-            <div class="col">
-                <div class="card h-100 innovation-item">
-                    <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
-                        <span class="date">23 November</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Judul untuk Inovasi Pertama</h5>
-                        <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
-                    </div>
-                    <div class="card-footer">
-                        <hr>
-                        <a class="btn detail-button" href="">Baca Selengkapnya -></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 innovation-item">
-                    <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/innovation.svg') }}" alt="">
-                        <span class="date">23 November</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Inovasi</h5>
-                        <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
-                    </div>
-                    <div class="card-footer">
-                        <hr>
-                        <a class="btn detail-button" href="">Baca Selengkapnya -></a>
+            @foreach($listInovasi as $inovasi)
+                <div class="col">
+                    <div class="card h-100 innovation-item">
+                        <div class="position-relative overflow-hidden">
+                            <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
+                            <span class="date">{{ $inovasi->release_date }}</span>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $inovasi->title }}</h5>
+                            <p><i class="bi bi-person-circle"></i> {{ $inovasi->publisher_name }} <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                        </div>
+                        <div class="card-footer">
+                            <hr>
+                            <a class="btn detail-button" href="">Baca Selengkapnya -></a>
+                        </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 innovation-item">
-                    <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
-                        <span class="date">23 November</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Judul untuk Inovasi Pertama</h5>
-                        <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
-                    </div>
-                    <div class="card-footer">
-                        <hr>
-                        <a class="btn detail-button" href="">Baca Selengkapnya -></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card h-100 innovation-item">
-                    <div class="position-relative overflow-hidden">
-                        <img src="{{ asset('images/innovation.svg') }}" alt="">
-                        <span class="date">23 November</span>
-                    </div>
-                    <div class="card-body">
-                        <h5 class="card-title">Judul Inovasi</h5>
-                        <p><i class="bi bi-person-circle"></i> Kontributor <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
-                    </div>
-                    <div class="card-footer">
-                        <hr>
-                        <a class="btn detail-button" href="">Baca Selengkapnya -></a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="text-center">
             <button class="btn btn-primary" onclick="window.location.href='/inovasi'">Lihat Semua Inovasi</button>
@@ -159,9 +110,9 @@
     </div>
 </div>
 
-<div class="container">
+<!-- <div class="container">
     <h2>Tes Database:</h2>
-    @foreach($inovasiList as $inovasi)
+    @foreach($listInovasi as $inovasi)
         <p>{{ $inovasi->title }}</p>
 
         @if($inovasi->photo)
@@ -169,5 +120,5 @@
             <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="">
         @endif
     @endforeach
-</div>
+</div> -->
 @endsection

@@ -4,15 +4,33 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Models\Inovation;
-use App\Models\User_inovation;
+use App\Models\Innovation;
+use Carbon\Carbon;
 
 class InovasiController extends Controller
 {
     public function index()
     {
-        $inovasiList = User_inovation::all();
+        $listInovasi = Innovation::orderBy('release_date', 'desc')->take(4)->get();
 
-        return view('landing-page', ['inovasiList' => $inovasiList]);
+        foreach ($listInovasi as $inovasi) {
+            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('d F');
+        }
+
+        return view('landing-page', ['listInovasi' => $listInovasi]);
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $listInovasi = Innovation::where('title', 'like', "%$search%")
+            ->orWhere('publisher_name', 'like', "%$search%")
+            ->paginate(12);
+
+        foreach ($listInovasi as $inovasi) {
+            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('d F');
+        }
+
+        return view('list-inovasi', ['listInovasi' => $listInovasi]);
     }
 }

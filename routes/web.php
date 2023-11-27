@@ -15,15 +15,9 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\InovasiController;
 
-// Route::get('/', function () {
-//     return view('landing-page');
-// });
+Route::get('/', [InovasiController::class, 'index'])->name('landing.page');
 
-Route::get('/', [InovasiController::class, 'index'])->name('landing-page');
-
-Route::get('/inovasi', function () {
-    return view('list-inovasi');
-});
+Route::get('/inovasi', [InovasiController::class, 'search'])->name('inovasi.search');
 
 Route::get('/upload-inovasi', function () {
     return view('form-inovasi');
