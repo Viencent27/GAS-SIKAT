@@ -158,4 +158,16 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+    <h2>Tes Database:</h2>
+    @foreach($inovasiList as $inovasi)
+        <p>{{ $inovasi->title }}</p>
+
+        @if($inovasi->photo)
+            <p>gambar:</p>
+            <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="">
+        @endif
+    @endforeach
+</div>
 @endsection

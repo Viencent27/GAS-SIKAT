@@ -13,9 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('landing-page');
-});
+use App\Http\Controllers\InovasiController;
+
+// Route::get('/', function () {
+//     return view('landing-page');
+// });
+
+Route::get('/', [InovasiController::class, 'index'])->name('landing-page');
 
 Route::get('/inovasi', function () {
     return view('list-inovasi');
