@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 use App\Models\Innovation;
 use Carbon\Carbon;
@@ -36,5 +37,30 @@ class InovasiController extends Controller
         }
 
         return view('list-inovasi', ['listInovasi' => $listInovasi]);
+    }
+
+
+    public function store(Request $request)
+    {
+        $request->validate([
+            'title' => 'required',
+            'publisher_name' => 'required',
+            'release_date' => 'required|date',
+            'description' => 'required',
+            'link_video' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $data = $request->except('photo');
+
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('photos');
+            $data['photo'] = Storage::get($photoPath);
+        }
+
+        Innovation::create($data);
+
+        session()->flash('success', 'Inovasi berhasil ditambahkan.');
+        return view('form-inovasi', ['success' => 'Inovasi berhasil ditambahkan.']);
     }
 }

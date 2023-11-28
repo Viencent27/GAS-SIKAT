@@ -26,3 +26,5 @@ Route::get('/upload-inovasi', function () {
 Route::get('/tentang-kami', function () {
     return view('tentang-kami');
 });
+
+Route::post('/inovasi/store', [InovasiController::class, 'store'])->name('inovasi.store');

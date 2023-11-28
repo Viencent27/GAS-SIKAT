@@ -3,29 +3,53 @@
 @section('content')
     <div class="container">
         <h2 class="title mt-5">Form Tambah Inovasi</h2>
-        <form>
+
+        @if (session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
+
+        <form action="{{ route('inovasi.store') }}" method="POST" enctype="multipart/form-data">
+            @csrf
             <div class="mb-3">
                 <label for="title" class="form-label fw-bold">Judul Inovasi</label>
                 <input type="text" class="form-control outline-primary" id="title" name="title"
-                    placeholder="Masukkan Judul">
+                    placeholder="Masukkan Judul" required>
+            </div>
+            <div class="mb-3">
+                <label for="publisher_name" class="form-label fw-bold">Nama Penerbit</label>
+                <input type="text" class="form-control outline-primary" id="publisher_name" name="publisher_name"
+                    placeholder="Masukkan Nama Penerbit" required>
             </div>
             <div class="mb-3">
                 <label for="release_date" class="form-label fw-bold">Tanggal Terbit</label>
-                <input type="date" class="form-control outline-primary" id="release_date" name="release_date">
+                <input type="date" class="form-control outline-primary" id="release_date" name="release_date" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label fw-bold">Deskripsi Inovasi</label>
                 <textarea class="form-control outline-primary" id="description" name="description" rows="3"
-                    placeholder="Masukkan Deskripsi Inovasi"></textarea>
+                    placeholder="Masukkan Deskripsi Inovasi" required></textarea>
             </div>
             <div class="mb-3">
                 <label for="link_video" class="form-label fw-bold">Link Video</label>
                 <input type="text" class="form-control outline-primary" id="link_video" name="link_video"
-                    placeholder="Masukkan Link Video">
+                    placeholder="Masukkan Link Video" required>
             </div>
             <div class="mb-3">
                 <label for="photo" class="form-label fw-bold">Upload Gambar</label>
-                <input class="form-control outline-primary" type="file" id="photo" name="photo" placeholder="">
+                <input class="form-control outline-primary" type="file" id="photo" name="photo" placeholder=""
+                    required>
             </div>
             <div class="mb-3 row justify-content-end">
                 <div class="col-auto">
