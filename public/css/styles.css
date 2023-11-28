@@ -167,6 +167,7 @@ main .innovation-item .date {
 
 main .innovation-item h5 {
     font-weight: 700;
+    text-transform: capitalize;
 }
 
 main .innovation-item p {

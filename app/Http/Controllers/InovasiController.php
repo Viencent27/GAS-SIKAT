@@ -12,12 +12,16 @@ class InovasiController extends Controller
     public function index()
     {
         $listInovasi = Innovation::orderBy('release_date', 'desc')->take(4)->get();
+        $totalInovasi = Innovation::count();
 
         foreach ($listInovasi as $inovasi) {
             $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('d F');
         }
 
-        return view('landing-page', ['listInovasi' => $listInovasi]);
+        return view('landing-page', [
+            'listInovasi' => $listInovasi,
+            'totalInovasi' => $totalInovasi,
+        ]);
     }
 
     public function search(Request $request)

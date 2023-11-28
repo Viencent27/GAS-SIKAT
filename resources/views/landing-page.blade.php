@@ -7,10 +7,9 @@
             <div class="col hero-text order-md-1 order-2">
                 <h1 class="mb-3 text-md-start">Galeri Inovasi Masyarakat (GAS-SIKAT)</h1>
                 <p class="mb-4">
-                    <span>GAS-SIKAT</span> adalah aplikasi untuk mempublikasikan
-                    dan mempromosikan berbagai inovasi yang telah
-                    dihasilkan oleh masyarakat dalam berbagai bidang
-                    kehidupan
+                    <span>GAS-SIKAT</span> adalah tempat untuk mempublikasikan dan
+                    mempromosikan berbagai inovasi yang telah dihasilkan oleh masyarakat
+                    dalam berbagai bidang kehidupan
                 </p>
                 <button class="btn btn-primary" onclick="window.location.href='/inovasi'">Selengkapnya</button>
             </div>
@@ -25,31 +24,32 @@
         <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
             <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/innovation.svg') }}" alt="">
             <div class="col-sm-8 col feature-text">
-                <h3>Nama fitur pertama</h3>
+                <h3>Mencari Inovasi</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-                    rerum ut dignissimos culpa natus consequuntur, molestiae
-                    reprehenderit excepturi magnam error adipisci repellat assumenda
-                    cumque dolore fuga accusantium, ex ullam! Explicabo.
+                    Jelajahi keberagaman inovasi yang menginspirasi di Galeri Inovasi
+                    Masyarakat kami. Temukan berbagai ide kreatif dan solusi inovatif
+                    yang telah dipublikasikan oleh inovator dari berbagai kalangan
+                    masyarakat. Mari dukung setiap inovasi yang telah mereka bagikan
+                    untuk perubahan positif di masyarakat.
                 </p>
             </div>
         </div>
         <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
             <div class="col-sm-8 col feature-text order-sm-1 order-2">
-                <h3>Nama fitur kedua</h3>
+                <h3>Mempublikasikan Inovasi</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-                    rerum ut dignissimos culpa natus consequuntur, molestiae
-                    reprehenderit excepturi magnam error adipisci repellat assumenda
-                    cumque dolore fuga accusantium, ex ullam! Explicabo.
+                    Kami menyediakan wadah kepada setiap individu atau kelompok untuk dapat
+                    secara mudah dan cepat mengunggah dan mempromosikan ide-ide kreatif
+                    mereka kepada masyarakat secara luas. Karena kami memahami bahwa setiap
+                    ide sangatlah berharga.
                 </p>
             </div>
-            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/pameran-inovasi.jpeg') }}" alt="">
+            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/innovation.svg') }}" alt="">
         </div>
         <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
             <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/innovation.svg') }}" alt="">
             <div class="col-sm-8 col feature-text">
-                <h3>Nama fitur ketiga</h3>
+                <h3>Kolaborasi Ide Kreatif</h3>
                 <p>
                     Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
                     rerum ut dignissimos culpa natus consequuntur, molestiae
@@ -97,28 +97,16 @@
             <div class="icon mt-3 mb-2">
                 <i class="bi bi-lightbulb"></i>
             </div>
-            <h3 class="m-0">50</h3>
+            <h3 class="m-0">{{ $totalInovasi }}</h3>
             <p class="mb-3">Total Inovasi</p>
         </div>
         <div class="col info-item text-center">
             <div class="icon mt-3 mb-2">
                 <i class="bi bi-person-check"></i>
             </div>
-            <h3 class="m-0">20</h3>
+            <h3 class="m-0">2</h3>
             <p class="mb-3">Total Kontributor</p>
         </div>
     </div>
 </div>
-
-<!-- <div class="container">
-    <h2>Tes Database:</h2>
-    @foreach($listInovasi as $inovasi)
-        <p>{{ $inovasi->title }}</p>
-
-        @if($inovasi->photo)
-            <p>gambar:</p>
-            <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="">
-        @endif
-    @endforeach
-</div> -->
 @endsection
