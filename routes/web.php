@@ -14,14 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 use App\Http\Controllers\InovasiController;
+use App\Http\Controllers\UploadController;
 
 Route::get('/', [InovasiController::class, 'index'])->name('landing.page');
 
 Route::get('/inovasi', [InovasiController::class, 'search'])->name('inovasi.search');
 
-Route::get('/upload-inovasi', function () {
-    return view('form-inovasi');
-});
+Route::get('/upload-inovasi', [UploadController::class, 'index'])->middleware('auth');
 
 Route::get('/tentang-kami', function () {
     return view('tentang-kami');
