@@ -63,4 +63,15 @@ class InovasiController extends Controller
         session()->flash('success', 'Inovasi berhasil ditambahkan.');
         return view('form-inovasi', ['success' => 'Inovasi berhasil ditambahkan.']);
     }
+
+    public function detail($id)
+    {
+        $inovasi = Innovation::find($id);
+
+        if (!$inovasi) {
+            abort(404);
+        }
+
+        return view('detail-inovasi', ['inovasi' => $inovasi]);
+    }
 }

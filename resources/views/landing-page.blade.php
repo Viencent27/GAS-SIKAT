@@ -70,7 +70,7 @@
                     <div class="card h-100 innovation-item">
                         <div class="position-relative overflow-hidden">
                             <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
-                            <span class="date">{{ $inovasi->release_date }}</span>
+                            <span class="date">{{ $inovasi->release_date->format('d-m-Y') }}</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $inovasi->title }}</h5>
@@ -78,7 +78,7 @@
                         </div>
                         <div class="card-footer">
                             <hr>
-                            <a class="btn detail-button" href="">Baca Selengkapnya -></a>
+                            <a class="btn detail-button" href="{{ route('inovasi.detail', ['id' => $inovasi->id]) }}">Baca Selengkapnya -></a>
                         </div>
                     </div>
                 </div>
