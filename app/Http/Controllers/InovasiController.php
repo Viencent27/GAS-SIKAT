@@ -16,7 +16,7 @@ class InovasiController extends Controller
         $totalInovasi = Innovation::count();
 
         foreach ($listInovasi as $inovasi) {
-            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('d F');
+            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
         }
 
         return view('landing-page', [
@@ -33,7 +33,7 @@ class InovasiController extends Controller
             ->paginate(12);
 
         foreach ($listInovasi as $inovasi) {
-            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('d F');
+            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
         }
 
         return view('list-inovasi', ['listInovasi' => $listInovasi]);

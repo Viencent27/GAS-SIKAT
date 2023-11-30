@@ -12,8 +12,4 @@ class Innovation extends Model
     protected $guarded = ['id'];
 
     protected $table = 'user_inovations';
-
-    protected $casts = [
-        'release_date' => 'date',
-    ];
 }

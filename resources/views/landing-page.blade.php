@@ -19,10 +19,10 @@
 </div>
 
 <div class="features container pb-5">
-    <h2 class="title mt-5">Fitur-Fitur GAS-SIKAT</h2>
-    <div class="column gap-5 mt-5">
-        <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
-            <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/innovation.svg') }}" alt="">
+    <h2 class="title my-5">Fitur-Fitur GAS-SIKAT</h2>
+    <div class="d-flex flex-column gap-5 mb-3">
+        <div class="row row-cols-sm-2 row-cols-1 g-4 g-sm-5 align-items-center feature">
+            <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/mencari-inovasi.svg') }}" alt="">
             <div class="col-sm-8 col feature-text">
                 <h3>Mencari Inovasi</h3>
                 <p>
@@ -34,27 +34,27 @@
                 </p>
             </div>
         </div>
-        <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
+        <div class="row row-cols-sm-2 row-cols-1 g-4 g-sm-5 align-items-center feature">
             <div class="col-sm-8 col feature-text order-sm-1 order-2">
                 <h3>Mempublikasikan Inovasi</h3>
                 <p>
-                    Kami menyediakan wadah kepada setiap individu atau kelompok untuk dapat
-                    secara mudah dan cepat mengunggah dan mempromosikan ide-ide kreatif
-                    mereka kepada masyarakat secara luas. Karena kami memahami bahwa setiap
-                    ide sangatlah berharga.
+                    Kami berusaha menyediakan wadah kepada setiap individu atau kelompok
+                    untuk dapat secara mudah dan cepat mengunggah dan mempromosikan ide-ide
+                    kreatif mereka kepada masyarakat secara luas. Karena kami memahami bahwa
+                    setiap ide yang muncul sangatlah berharga.
                 </p>
             </div>
-            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/innovation.svg') }}" alt="">
+            <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/mempublikasikan-inovasi.svg') }}" alt="">
         </div>
-        <div class="row row-cols-sm-2 row-cols-1 g-3 align-items-center mb-4 feature">
-            <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/innovation.svg') }}" alt="">
+        <div class="row row-cols-sm-2 row-cols-1 g-4 g-sm-5 align-items-center mb-4 feature">
+            <img class="col-sm-4 col-8 mx-auto" src="{{ asset('images/membagikan-inovasi.svg') }}" alt="">
             <div class="col-sm-8 col feature-text">
-                <h3>Kolaborasi Ide Kreatif</h3>
+                <h3>Membagikan Inovasi</h3>
                 <p>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Omnis,
-                    rerum ut dignissimos culpa natus consequuntur, molestiae
-                    reprehenderit excepturi magnam error adipisci repellat assumenda
-                    cumque dolore fuga accusantium, ex ullam! Explicabo.
+                    Bagikan inovasi atau ide kreatif yang Anda temukan di Galeri Inovasi
+                    Masyarakat kepada teman atau komunitas Anda. Ikut serta dalam
+                    mempromosikan gagasan-gagasan inovasi yang dihasilkan oleh masyarakat.
+                    Memperluas dampak inovasi dan memberikan inspirasi kepada orang lain.
                 </p>
             </div>
         </div>
@@ -70,7 +70,7 @@
                     <div class="card h-100 innovation-item">
                         <div class="position-relative overflow-hidden">
                             <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
-                            <span class="date">{{ $inovasi->release_date->format('d-m-Y') }}</span>
+                            <span class="date">{{ $inovasi->release_date }}</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $inovasi->title }}</h5>

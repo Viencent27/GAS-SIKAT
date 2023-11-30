@@ -15,7 +15,7 @@
                 <div class="card h-100 shadow innovation-item">
                     <div class="position-relative overflow-hidden">
                         <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
-                        <span class="date">{{ $inovasi->release_date->format('d-m-Y') }}</span>
+                        <span class="date">{{ $inovasi->release_date }}</span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $inovasi->title }}</h5>
