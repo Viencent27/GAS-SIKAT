@@ -16,7 +16,7 @@
                         <h3>Nama Inovator</h3>
                         <p>{{ $inovasi->publisher_name }}</p>
                         <h3>Tanggal Terbit</h3>
-                        <p>{{ $inovasi->release_date->format('d F Y') }}</p>
+                        <p>{{ $inovasi->release_date }}</p>
                         <h3>Link Video</h3>
                         <a href="{{ $inovasi->link_video }}" target="_blank">{{ $inovasi->link_video }}</a>
                     </div>

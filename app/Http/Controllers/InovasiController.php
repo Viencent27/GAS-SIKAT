@@ -68,6 +68,8 @@ class InovasiController extends Controller
     {
         $inovasi = Innovation::find($id);
 
+        $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
+
         if (!$inovasi) {
             abort(404);
         }
