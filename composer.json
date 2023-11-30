@@ -9,7 +9,8 @@
         "guzzlehttp/guzzle": "^7.5",
         "laravel/framework": "^10.28.0",
         "laravel/tinker": "^2.8.2",
-        "twbs/bootstrap": "^5.3"
+        "twbs/bootstrap": "^5.3",
+        "composer-runtime-api": "^2.2.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.21",
