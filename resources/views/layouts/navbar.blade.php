@@ -19,7 +19,28 @@
                     <a class="nav-link {{ Request::is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a>
                 </li>
             </ul>
-            <button class="btn btn-primary">Login</button>
+            @guest
+                @if (Route::has('login'))
+                    <button class="btn btn-primary" onclick="window.location.href='/login'">Login</button>
+                @endif
+            @else
+                <div class="dropdown">
+                    <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Halo, <span class="fw-bold">{{ Auth::user()->first_name }}</span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
+                        </li>
+                    </ul>
+                </div>
+            @endguest
         </div>
     </div>
 </nav>
