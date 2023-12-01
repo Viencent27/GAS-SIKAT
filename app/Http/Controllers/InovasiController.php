@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\Innovation;
 use App\Models\User;
@@ -49,15 +50,21 @@ class InovasiController extends Controller
             'release_date' => 'required|date',
             'description' => 'required',
             'link_video' => 'required',
+            'category' => 'required',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
-        $data = $request->except('photo');
+        $user_id = Auth::id();
+
+        $data = $request->except(['photo', 'user_id']);
 
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->store('photos');
-            $data['photo'] = Storage::get($photoPath);
+            $photoPath = $request->file('photo')->getRealPath();
+
+            $data['photo'] = file_get_contents($photoPath);
         }
+
+        $data['user_id'] = $user_id;
 
         Innovation::create($data);
 

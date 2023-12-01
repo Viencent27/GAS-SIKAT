@@ -47,6 +47,14 @@
                     placeholder="Masukkan Link Video" required>
             </div>
             <div class="mb-3">
+                <label for="category" class="form-label fw-bold">kategori</label>
+                <select class="form-select outline-primary" aria-label="Default select example" id="category"
+                    name="category">
+                    <option value="tes1">tes1</option>
+                    <option value="tes2">tes2</option>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="photo" class="form-label fw-bold">Upload Gambar</label>
                 <input class="form-control outline-primary" type="file" id="photo" name="photo" placeholder=""
                     required>
