@@ -74,7 +74,7 @@
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $inovasi->title }}</h5>
-                            <p><i class="bi bi-person-circle"></i> {{ $inovasi->publisher_name }} <span>/</span> <i class="bi bi-folder-fill"></i> {{ $inovasi->category }}</p>
+                            <p><i class="bi bi-person-circle"></i> {{ $inovasi->user->first_name }} <span>/</span> <i class="bi bi-folder-fill"></i> {{ $inovasi->category }}</p>
                         </div>
                         <div class="card-footer">
                             <hr>
@@ -104,8 +104,8 @@
             <div class="icon mt-3 mb-2">
                 <i class="bi bi-person-check"></i>
             </div>
-            <h3 class="m-0">2</h3>
-            <p class="mb-3">Total Kontributor</p>
+            <h3 class="m-0">{{ $totalInovator }}</h3>
+            <p class="mb-3">Total Inovator</p>
         </div>
     </div>
 </div>

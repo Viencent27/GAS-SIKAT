@@ -19,7 +19,7 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $inovasi->title }}</h5>
-                        <p><i class="bi bi-person-circle"></i> {{ $inovasi->publisher_name }} <span>/</span> <i class="bi bi-folder-fill"></i> Kategori</p>
+                        <p><i class="bi bi-person-circle"></i> {{ $inovasi->user->first_name }} <span>/</span> <i class="bi bi-folder-fill"></i> {{ $inovasi->category }}</p>
                     </div>
                     <div class="card-footer">
                         <hr>

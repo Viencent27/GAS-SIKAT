@@ -11,5 +11,10 @@ class Innovation extends Model
 
     protected $guarded = ['id'];
 
-    protected $table = 'user_inovations';
+    protected $table = 'inovations';
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
 }

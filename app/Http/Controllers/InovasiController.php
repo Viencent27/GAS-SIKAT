@@ -6,14 +6,16 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 use App\Models\Innovation;
+use App\Models\User;
 use Carbon\Carbon;
 
 class InovasiController extends Controller
 {
     public function index()
     {
-        $listInovasi = Innovation::orderBy('release_date', 'desc')->take(4)->get();
+        $listInovasi = Innovation::with('user')->orderBy('release_date', 'desc')->take(4)->get();
         $totalInovasi = Innovation::count();
+        $totalInovator = Innovation::with('user')->distinct('user_id')->count('user_id');
 
         foreach ($listInovasi as $inovasi) {
             $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
@@ -22,15 +24,14 @@ class InovasiController extends Controller
         return view('landing-page', [
             'listInovasi' => $listInovasi,
             'totalInovasi' => $totalInovasi,
+            'totalInovator' => $totalInovator
         ]);
     }
 
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $listInovasi = Innovation::where('title', 'like', "%$search%")
-            ->orWhere('publisher_name', 'like', "%$search%")
-            ->paginate(12);
+        $listInovasi = Innovation::where('title', 'like', "%$search%")->paginate(12);
 
         foreach ($listInovasi as $inovasi) {
             $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
