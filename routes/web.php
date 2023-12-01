@@ -14,10 +14,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+use App\Http\Controllers\InovasiController;
+use App\Http\Controllers\UploadController;
+
+Route::get('/', [InovasiController::class, 'index'])->name('landing.page');
+
+Route::get('/inovasi', [InovasiController::class, 'search'])->name('inovasi.search');
+
+Route::get('/upload-inovasi', [UploadController::class, 'index'])->middleware('auth');
+
+Route::get('/tentang-kami', function () {
+    return view('tentang-kami');
 });
 
+Route::get('/inovasi/{id}', [InovasiController::class, 'detail'])->name('inovasi.detail');
+
+Route::post('/inovasi/store', [InovasiController::class, 'store'])->name('inovasi.store');
+
 Auth::routes();
-
-

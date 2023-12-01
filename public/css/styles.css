@@ -1,0 +1,307 @@
+* {
+    color: #141E46;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+nav.navbar {
+    min-height: 80px;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+a.navbar-brand {
+    font-weight: bold;
+    font-size: 28px;
+    margin: 0;
+    color: #141E46;
+}
+
+a.nav-link {
+    color: rgba(20, 30, 70, 0.8);
+    font-weight: 500;
+    position: relative;
+    padding-inline: 14px !important;
+}
+
+a.nav-link::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #FF6969;
+    margin-top: 2px;
+    transition: width 0.3s ease;
+}
+
+a.nav-link:hover::after {
+    color: rgba(20, 30, 70, 1);
+    width: 100%;
+}
+
+a.nav-link.active {
+    font-weight: 600;
+}
+
+a.nav-link.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #FF6969;
+    margin-top: 2px;
+}
+
+.btn-primary {
+    background-color: #FF6969;
+    border-radius: 3px;
+    border-color: transparent;
+    padding: 8px 22px;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: #E25151;
+    border-color: transparent;
+}
+
+h2.title {
+    font-weight: 700;
+    position: relative;
+    text-align: center;
+}
+
+h2.title::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #FF6969;
+    margin-top: 10px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+main {
+    flex: 1;
+}
+
+main .hero,
+main .innovation-gallery {
+    background-color: #EEE;
+}
+
+main .hero .row {
+    min-height: 640px;
+}
+
+main .hero-text h1 {
+    font-weight: 700;
+    font-size: 45px;
+}
+
+@media (max-width: 767px) {
+    main .hero-text h1 {
+        font-size: 32px;
+        text-align: center;
+        margin-top: -80px;
+    }
+
+    main .hero .row {
+        text-align: center;
+    }
+}
+
+main .hero-text p {
+    font-weight: 500;
+}
+
+main .hero-text p span {
+    color: #FF6969;
+    font-weight: 600;
+}
+
+main img.hero-image {
+    max-width: 550px;
+}
+
+@media (max-width: 575px) {
+
+    main .features .feature h3,
+    main .features .feature p {
+        text-align: center;
+    }
+}
+
+main .innovation-item {
+    border-color: transparent;
+    border-radius: 3px;
+    color: #141E46;
+}
+
+main .innovation-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 3px 3px 0 0;
+}
+
+main .innovation-item .date {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    color: #fff;
+    background-color: #FF6969;
+    padding: 6px 12px;
+    text-transform: capitalize;
+    font-size: 14px;
+}
+
+main .innovation-item h5 {
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+main .innovation-item p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #7E7E7E;
+}
+
+main .innovation-item p i {
+    font-size: 16px;
+    color: #FF6969;
+}
+
+main .innovation-item p span {
+    margin-inline: 10px;
+}
+
+main .innovation-item .card-body {
+    padding-bottom: 0;
+}
+
+main .innovation-item .card-footer {
+    background-color: transparent;
+    border: 0px;
+    padding: 0 16px 16px 16px;
+}
+
+main .innovation-item .card-footer hr {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+main .innovation-item .card-footer a {
+    padding: 0;
+    font-weight: 600;
+    color: #7E7E7E;
+}
+
+main .innovation-item:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .08);
+}
+
+main .innovation-item:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+main .innovation-item img {
+    transition: transform 0.3s ease;
+}
+
+main .innovation-item a:hover {
+    color: #FF6969;
+}
+
+main .shadow.innovation-item {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1) !important;
+}
+
+main .shadow.innovation-item:hover {
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .175) !important;
+}
+
+main .information .info-item {
+    background-color: #EEE;
+    border-radius: 3px;
+}
+
+main .information .info-item .icon i {
+    font-size: 40px;
+    color: #FF6969;
+}
+
+main .information .col.info-item {
+    max-width: 240px;
+}
+
+main .search-inovasi {
+    max-width: 400px;
+}
+
+main .tentang-kami p {
+    max-width: 550px;
+}
+
+main .tentang-kami .team-member {
+    border: 0;
+}
+
+main .tentang-kami .team-member img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 7px 7px 0 0;
+}
+
+@media (max-width: 1199px) {
+    main .tentang-kami .team-member img {
+        height: 300px;
+    }
+}
+
+/* Form */
+
+#description {
+    height: 135px;
+}
+
+.btn-outline-primary {
+    color: black;
+    border-radius: 3px;
+    border-color: #FF6969;
+    padding: 8px 22px;
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:active,
+.btn-outline-primary:focus {
+    background-color: #E25151;
+    border-color: transparent;
+}
+
+.outline-primary {
+    border-color: #FF6969;
+}
+
+
+footer {
+    background-color: #EEE;
+}
+
+footer p.copyright {
+    background-color: #D9D9D9;
+    margin: 0;
+    min-height: 60px;
+}
