@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,3 +30,5 @@ Route::get('/tentang-kami', function () {
 Route::get('/inovasi/{id}', [InovasiController::class, 'detail'])->name('inovasi.detail');
 
 Route::post('/inovasi/store', [InovasiController::class, 'store'])->name('inovasi.store');
+
+Auth::routes();
