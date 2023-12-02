@@ -346,7 +346,7 @@ Login
 .container-login form {
 	background-color: #FFFFFF;
 	display: flex;
-	align-items: center;
+	align-items: left;
 	justify-content: center;
 	flex-direction: column;
 	padding: 0 50px;
