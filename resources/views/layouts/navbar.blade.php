@@ -1,6 +1,6 @@
 <nav class="navbar sticky-top navbar-expand-lg">
     <div class="container">
-        <a class="navbar-brand" href="#">GAS-SIKAT</a>
+        <a class="navbar-brand" href="/">GAS-SIKAT</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -28,7 +28,7 @@
                     <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Halo, <span class="fw-bold">{{ Auth::user()->first_name }}</span>
                     </button>
-                    <ul class="dropdown-menu">
+                    <ul class="dropdown-menu dropdown-menu-lg-end dropdown-menu-start">
                         <li>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}

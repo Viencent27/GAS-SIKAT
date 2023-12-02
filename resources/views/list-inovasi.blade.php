@@ -12,7 +12,7 @@
     <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center g-4 my-4">
         @foreach($listInovasi as $inovasi)
             <div class="col">
-                <div class="card h-100 shadow innovation-item">
+                <div class="card h-100 shadow innovation-item" onclick="window.location.href='/inovasi/{{ $inovasi->id }}'">
                     <div class="position-relative overflow-hidden">
                         <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
                         <span class="date">{{ $inovasi->release_date }}</span>

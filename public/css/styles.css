@@ -144,14 +144,16 @@ main .innovation-item {
     border-color: transparent;
     border-radius: 3px;
     color: #141E46;
+    cursor: pointer;
 }
 
 main .innovation-item img {
     width: 100%;
-    height: 200px;
+    height: 240px;
     object-fit: cover;
     object-position: center center;
     border-radius: 3px 3px 0 0;
+    transition: transform 0.3s ease;
 }
 
 main .innovation-item .date {
@@ -212,10 +214,6 @@ main .innovation-item:hover {
 
 main .innovation-item:hover img {
     transform: scale(1.1);
-    transition: transform 0.3s ease;
-}
-
-main .innovation-item img {
     transition: transform 0.3s ease;
 }
 
