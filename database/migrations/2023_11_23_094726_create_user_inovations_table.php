@@ -20,10 +20,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('link_video');
             $table->string('category');
+            $table->string('photo');
             $table->timestamps();
         });
-
-        DB::statement("ALTER TABLE user_inovations ADD photo MEDIUMBLOB");
     }
 
     /**

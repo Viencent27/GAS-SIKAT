@@ -20,11 +20,10 @@ return new class extends Migration
             $table->text('description');
             $table->string('link_video');
             $table->string('category');
+            $table->string('photo');
             $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete();
             $table->timestamps();
         });
-
-        DB::statement("ALTER TABLE inovations ADD photo MEDIUMBLOB");
     }
 
     /**
