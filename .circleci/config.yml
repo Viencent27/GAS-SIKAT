@@ -1,26 +1,39 @@
 version: 2.1
 
 jobs:
-  build:
+  test:
     docker:
-      - image: cimg/node:14.17.0
       - image: cimg/php:8.1.2
     steps:
       - checkout
       - run:
-          name: Install Dependencies
-          command: npm install
-      - run:
-          name: Install Composer Dependencies
-          command: composer install --no-interaction --prefer-dist
-      - run:
-          name: Run Tests
-          command: php artisan test
-      - run:
-          name: Build Assets
-          command: npm run build
+          name: Install Node
+          command: |
+            curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+      # Composer cache
+      - restore_cache:
+          keys:
+          - composer-v1-{{ checksum "composer.lock" }}
+          - composer-v1-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+      # Node cache
+      - restore_cache:
+          keys:
+            - node-v4-{{ checksum "package.json" }}
+            - node-v4-
+      - run: npm install
+      - save_cache:
+          key: node-v4-{{ checksum "package.json" }}
+          paths:
+            - node-modules
+            - ~/.yarn
 workflows:
   version: 2
-  build:
+  test:
     jobs:
       - build
