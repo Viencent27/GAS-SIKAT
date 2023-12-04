@@ -88,6 +88,7 @@
                             <a class="btn btn-link"
                                 href="{{ route('password.request') }}">{{ __('Lupa Password?') }}</a>
                         @endif
+                        <a class="btn btn-link mobile-only-btn" onclick="window.location.href='/register'">Belum punya akun?</a>
                         <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
                     </form>
                 </div>

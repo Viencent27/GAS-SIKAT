@@ -495,4 +495,39 @@ button.ghost {
     max-height: 400px;
     object-fit: cover;
     object-position: center;
-  }
+}
+
+/* 
+    Responsive Login
+*/
+@media screen and (max-width: 767px) {
+    .form-container.sign-up-container {
+        display: none;
+    }
+
+    .overlay-container{
+        display: none;
+    }
+
+    .form-container.sign-in-container {
+        width: 100%;
+    }
+
+    .mobile-only-btn {
+        display: block;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .mobile-only-btn {
+        display: none;
+    }
+}
+
+.form-container-register {
+	position: absolute;
+	top: 0;
+	height: 100%;
+    width: 100%;
+}
