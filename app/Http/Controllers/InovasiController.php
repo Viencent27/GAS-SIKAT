@@ -41,7 +41,6 @@ class InovasiController extends Controller
         return view('list-inovasi', ['listInovasi' => $listInovasi]);
     }
 
-
     public function store(Request $request)
     {
         $request->validate([
@@ -52,21 +51,20 @@ class InovasiController extends Controller
             'category' => 'required',
             'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
-
+    
         $user_id = Auth::id();
-
+    
         $data = $request->except(['photo', 'user_id']);
-
+    
         if ($request->hasFile('photo')) {
-            $photoPath = $request->file('photo')->getRealPath();
-
-            $data['photo'] = file_get_contents($photoPath);
+            $photoPath = $request->file('photo')->store('photos', 'public');
+            $data['photo'] = $photoPath;
         }
-
+    
         $data['user_id'] = $user_id;
-
+    
         Innovation::create($data);
-
+    
         session()->flash('success', 'Inovasi berhasil ditambahkan.');
         return view('form-inovasi', ['success' => 'Inovasi berhasil ditambahkan.']);
     }

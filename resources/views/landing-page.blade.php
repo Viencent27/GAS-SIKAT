@@ -69,7 +69,7 @@
                 <div class="col">
                     <div class="card h-100 innovation-item" onclick="window.location.href='/inovasi/{{ $inovasi->id }}'">
                         <div class="position-relative overflow-hidden">
-                            <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}">
+                            <img src="{{ Storage::url($inovasi->photo) }}" alt="{{ $inovasi->title }}">
                             <span class="date">{{ $inovasi->release_date }}</span>
                         </div>
                         <div class="card-body">
