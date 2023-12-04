@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="title my-5">Form Tambah Inovasi</h2>
+        <h2 class="title my-5">Form Detail Inovasi</h2>
         <div class="row justify-content-center mb-4">
             <div class="col-md-8 ">
                 <div class="row detail">
