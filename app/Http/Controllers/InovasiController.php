@@ -46,7 +46,6 @@ class InovasiController extends Controller
     {
         $request->validate([
             'title' => 'required',
-            'publisher_name' => 'required',
             'release_date' => 'required|date',
             'description' => 'required',
             'link_video' => 'required',

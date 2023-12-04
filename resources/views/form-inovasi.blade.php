@@ -28,11 +28,6 @@
                     placeholder="Masukkan Judul" required>
             </div>
             <div class="mb-3">
-                <label for="publisher_name" class="form-label fw-bold">Nama Penerbit</label>
-                <input type="text" class="form-control outline-primary" id="publisher_name" name="publisher_name"
-                    placeholder="Masukkan Nama Penerbit" required>
-            </div>
-            <div class="mb-3">
                 <label for="release_date" class="form-label fw-bold">Tanggal Terbit</label>
                 <input type="date" class="form-control outline-primary" id="release_date" name="release_date" required>
             </div>
