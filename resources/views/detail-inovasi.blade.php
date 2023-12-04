@@ -7,7 +7,7 @@
             <div class="col-md-8 ">
                 <div class="row detail">
                     <div class="col-lg-6 order-first">
-                        <img src="data:image/jpg;base64,{{ base64_encode($inovasi->photo) }}" alt="{{ $inovasi->title }}" class="img-fluid featured-image">
+                        <img src="{{ Storage::url($inovasi->photo) }}" alt="{{ $inovasi->title }}" class="img-fluid featured-image">
                     </div>
                     <div class="col-lg-6 order-last font-detail-color">
                         <h2 class="mb-4">{{ $inovasi->title }}</h2>
