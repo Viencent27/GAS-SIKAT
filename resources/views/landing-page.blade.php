@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    use Carbon\Carbon;
+@endphp
 <div class="hero">
     <div class="container">
         <div class="row row-cols-md-2 row-cols-1 align-items-center">
@@ -38,10 +41,12 @@
             <div class="col-sm-8 col feature-text order-sm-1 order-2">
                 <h3>Mempublikasikan Inovasi</h3>
                 <p>
-                    Kami berusaha menyediakan wadah kepada setiap individu atau kelompok
+                    Kami berusaha menyediakan platform kepada setiap individu atau kelompok
                     untuk dapat secara mudah dan cepat mengunggah dan mempromosikan ide-ide
-                    kreatif mereka kepada masyarakat secara luas. Karena kami memahami bahwa
-                    setiap ide yang muncul sangatlah berharga.
+                    kreatif mereka kepada masyarakat secara luas.
+                    <a href="/upload-inovasi" class="link">
+                        Tertarik untuk mengunggah Inovasi Anda?
+                    </a>
                 </p>
             </div>
             <img class="col-sm-4 col-8 mx-auto order-sm-2 order-1" src="{{ asset('images/mempublikasikan-inovasi.svg') }}" alt="">
@@ -70,7 +75,7 @@
                     <div class="card h-100 innovation-item" onclick="window.location.href='/inovasi/{{ $inovasi->id }}'">
                         <div class="position-relative overflow-hidden">
                             <img src="{{ Storage::url($inovasi->photo) }}" alt="{{ $inovasi->title }}">
-                            <span class="date">{{ $inovasi->release_date }}</span>
+                            <span class="date">{{ Carbon::parse($inovasi->release_date)->format('j F Y') }}</span>
                         </div>
                         <div class="card-body">
                             <h5 class="card-title">{{ $inovasi->title }}</h5>

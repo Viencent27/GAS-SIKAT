@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+@php
+    use Carbon\Carbon;
+@endphp
 <div class="container">
     <h2 class="title mt-5">Inovasi GAS-SIKAT</h2>
     <div class="mt-5 mx-auto search-inovasi">
@@ -15,7 +18,7 @@
                 <div class="card h-100 shadow innovation-item" onclick="window.location.href='/inovasi/{{ $inovasi->id }}'">
                     <div class="position-relative overflow-hidden">
                         <img src="{{ Storage::url($inovasi->photo) }}" alt="{{ $inovasi->title }}">
-                        <span class="date">{{ $inovasi->release_date }}</span>
+                        <span class="date">{{ Carbon::parse($inovasi->release_date)->format('j F Y') }}</span>
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ $inovasi->title }}</h5>

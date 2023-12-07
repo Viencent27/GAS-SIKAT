@@ -57,6 +57,12 @@ a.nav-link.active::after {
     margin-top: 2px;
 }
 
+@media (max-width: 991px) {
+    nav.navbar {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    }
+}
+
 .btn-primary {
     background-color: #FF6969;
     border-radius: 3px;
@@ -138,6 +144,17 @@ main img.hero-image {
     main .features .feature p {
         text-align: center;
     }
+}
+
+main a.link {
+    color: #FF6969 !important;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+main a.link:hover {
+    color: #E25151 !important;
+    text-decoration: underline;
 }
 
 main .innovation-item {

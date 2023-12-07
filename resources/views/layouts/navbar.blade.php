@@ -5,7 +5,8 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mx-auto">
+            <hr class="d-lg-none my-2">
+            <ul class="navbar-nav mx-auto mb-lg-0 mb-2">
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
                 </li>

@@ -18,10 +18,6 @@ class InovasiController extends Controller
         $totalInovasi = Innovation::count();
         $totalInovator = Innovation::with('user')->distinct('user_id')->count('user_id');
 
-        foreach ($listInovasi as $inovasi) {
-            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
-        }
-
         return view('landing-page', [
             'listInovasi' => $listInovasi,
             'totalInovasi' => $totalInovasi,
@@ -33,10 +29,6 @@ class InovasiController extends Controller
     {
         $search = $request->input('search');
         $listInovasi = Innovation::where('title', 'like', "%$search%")->paginate(12);
-
-        foreach ($listInovasi as $inovasi) {
-            $inovasi->release_date = Carbon::parse($inovasi->release_date)->format('j F Y');
-        }
 
         return view('list-inovasi', ['listInovasi' => $listInovasi]);
     }
