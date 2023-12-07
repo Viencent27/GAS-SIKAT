@@ -17,6 +17,18 @@ class UserController extends Controller
         ]);
     }
 
+    public function updateUserRole(Request $request, $id)
+    {
+        $user = User::findOrFail($id);
+
+        // Validasi input di sini jika diperlukan
+
+        $user->update(['role' => $request->role]);
+
+        // return redirect()->back()->with('success', 'Role pengguna berhasil diperbarui.');
+        return redirect()->back();
+    }
+
     public function destroy($id)
     {
         $user = User::findOrFail($id);

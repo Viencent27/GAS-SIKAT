@@ -26,6 +26,7 @@
                 <th scope="col">First Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Email</th>
+                <th scope="col">Role</th>
                 <th scope="col">Action</th>
             </tr>
         </thead>
@@ -37,10 +38,21 @@
                 <td>{{ $user->last_name }}</td>
                 <td>{{ $user->email }}</td>
                 <td>
+                    <form action="{{ route('updateUserRole', $user->id) }}" method="post" id="updateUserRoleForm{{ $user->id }}">
+                        @csrf
+                        @method('PUT')
+
+                        <select class="form-select" name="role" onchange="document.getElementById('updateUserRoleForm{{ $user->id }}').submit()">
+                            <option value="user" {{ $user->role == 'user' ? 'selected' : '' }}>User</option>
+                            <option value="admin" {{ $user->role == 'admin' ? 'selected' : '' }}>Admin</option>
+                        </select>
+                    </form>
+                </td>
+                <td>
                     <form action="{{ route('users.destroy', $user->id) }}" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-danger">
                             <i class="bi bi-trash-fill" style="color: white;"></i> Hapus
                         </button>
                     </form>

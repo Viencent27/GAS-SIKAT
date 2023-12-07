@@ -31,6 +31,8 @@ Route::get('/tentang-kami', function () {
 
 Route::middleware(['role:admin'])->group(function () {
     Route::get('/pengguna', [UserController::class, 'index'])->name('users.index');
+
+    Route::put('/updateUserRole/{id}', [UserController::class, 'updateUserRole'])->name('updateUserRole');
     
     Route::delete('/pengguna/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 });
