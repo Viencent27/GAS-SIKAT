@@ -13,9 +13,23 @@
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('inovasi') ? 'active' : '' }}" href="/inovasi">Inovasi</a>
                 </li>
+                @auth
+                    @if(auth()->user()->role == 'admin')
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('pengguna') ? 'active' : '' }}" href="/pengguna">Pengguna</a>
+                        </li>
+                    @endif
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('upload-inovasi') ? 'active' : '' }}" href="/upload-inovasi">Upload Inovasi</a>
                 </li>
+                @auth
+                    @if(auth()->user()->role == 'user')
+                        <li class="nav-item">
+                            <a class="nav-link {{ Request::is('inovasi-saya') ? 'active' : '' }}" href="/inovasi-saya">Inovasi Saya</a>
+                        </li>
+                    @endif
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('tentang-kami') ? 'active' : '' }}" href="/tentang-kami">Tentang Kami</a>
                 </li>

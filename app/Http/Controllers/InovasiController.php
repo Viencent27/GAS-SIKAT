@@ -33,6 +33,18 @@ class InovasiController extends Controller
         return view('list-inovasi', ['listInovasi' => $listInovasi]);
     }
 
+    public function myInnovations(Request $request)
+    {
+        $search = $request->input('search');
+        $user_id = auth()->user()->id;
+
+        $listInovasiSaya = Innovation::where('user_id', $user_id)
+            ->where('title', 'like', "%$search%")
+            ->paginate(12);
+
+        return view('inovasi-saya', ['listInovasiSaya' => $listInovasiSaya]);
+    }
+
     public function store(Request $request)
     {
         $request->validate([

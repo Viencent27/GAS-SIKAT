@@ -16,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\InovasiController;
 use App\Http\Controllers\UploadController;
+use App\Http\Controllers\UserController;
+use App\Http\Middleware\CheckRole;
 
 Route::get('/', [InovasiController::class, 'index'])->name('landing.page');
 
@@ -25,6 +27,16 @@ Route::get('/upload-inovasi', [UploadController::class, 'index'])->middleware('a
 
 Route::get('/tentang-kami', function () {
     return view('tentang-kami');
+});
+
+Route::middleware(['role:admin'])->group(function () {
+    Route::get('/pengguna', [UserController::class, 'index'])->name('users.index');
+    
+    Route::delete('/pengguna/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+});
+
+Route::middleware(['role:user'])->group(function () {
+    Route::get('/inovasi-saya', [InovasiController::class, 'myInnovations'])->name('user.innovations');
 });
 
 Route::get('/inovasi/{id}', [InovasiController::class, 'detail'])->name('inovasi.detail');
