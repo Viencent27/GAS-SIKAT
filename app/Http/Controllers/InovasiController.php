@@ -94,6 +94,10 @@ class InovasiController extends Controller
             abort(404);
         }
 
+        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+            abort(403, 'Unauthorized action.');
+        }
+
         return view('form-update-inovasi', ['inovasi' => $inovasi]);
     }
 
@@ -112,6 +116,10 @@ class InovasiController extends Controller
 
         if (!$inovasi) {
             abort(404);
+        }
+
+        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+            abort(403, 'Unauthorized action.');
         }
 
         $inovasi->title = $request->input('title');
@@ -137,6 +145,10 @@ class InovasiController extends Controller
 
         if (!$inovasi) {
             abort(404);
+        }
+
+        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+            abort(403, 'Unauthorized action.');
         }
 
         if (Storage::disk('public')->exists($inovasi->photo)) {
