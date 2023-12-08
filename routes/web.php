@@ -41,6 +41,12 @@ Route::middleware(['role:user'])->group(function () {
     Route::get('/inovasi-saya', [InovasiController::class, 'myInnovations'])->name('user.innovations');
 });
 
+Route::middleware(['auth'])->group(function () {
+    Route::get('/inovasi/{id}/edit', [InovasiController::class, 'edit'])->name('inovasi.edit');
+    Route::put('/inovasi/{id}/update', [InovasiController::class, 'update'])->name('inovasi.update');
+    Route::delete('/inovasi/{id}', [InovasiController::class, 'destroy'])->name('inovasi.destroy');
+});
+
 Route::get('/inovasi/{id}', [InovasiController::class, 'detail'])->name('inovasi.detail');
 
 Route::post('/inovasi/store', [InovasiController::class, 'store'])->name('inovasi.store');
