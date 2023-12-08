@@ -8,25 +8,20 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $listUser = User::all();
+        $search = $request->input('search');
+        $listUser = User::where('first_name', 'like', "%$search%")->get();
 
-        return view('list-pengguna', [
-            'listUser' => $listUser,
-        ]);
+        return view('list-pengguna', ['listUser' => $listUser,]);
     }
 
     public function updateUserRole(Request $request, $id)
     {
         $user = User::findOrFail($id);
-
-        // Validasi input di sini jika diperlukan
-
         $user->update(['role' => $request->role]);
 
-        // return redirect()->back()->with('success', 'Role pengguna berhasil diperbarui.');
-        return redirect()->back();
+        return redirect()->back()->with('success', 'Role pengguna berhasil diperbarui.');
     }
 
     public function destroy($id)

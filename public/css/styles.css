@@ -260,7 +260,8 @@ main .information .col.info-item {
     max-width: 240px;
 }
 
-main .search-inovasi {
+main .search-inovasi,
+main .search-pengguna {
     max-width: 400px;
 }
 

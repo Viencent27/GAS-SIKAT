@@ -3,7 +3,15 @@
 @section('content')
 <div class="container">
     <h2 class="title mt-5">Daftar Pengguna</h2>
-    <table class="table table-bordered table-hover mt-5">
+
+    <div class="mt-5 mx-auto search-pengguna">
+        <form action="{{ route('users.index') }}" method="GET" class="input-group">
+            <input type="text" name="search" class="form-control" placeholder="Cari Pengguna" aria-describedly="searchBtn">
+            <button class="btn btn-outline-secondary" type="submit" id="searchBtn"><i class="bi bi-search"></i></button>
+        </form>
+    </div>
+
+    <table class="table table-bordered table-hover mt-3">
         <!-- @if (session('success'))
             <div class="alert alert-success">
                 {{ session('success') }}
@@ -20,7 +28,7 @@
             </div>
         @endif -->
         
-        <thead class="table-light">
+        <thead class="table-secondary">
             <tr>
                 <th scope="col">No</th>
                 <th scope="col">First Name</th>

@@ -16,7 +16,7 @@
                 @auth
                     @if(auth()->user()->role == 'admin')
                         <li class="nav-item">
-                            <a class="nav-link {{ Request::is('pengguna') ? 'active' : '' }}" href="/pengguna">Pengguna</a>
+                            <a class="nav-link {{ Request::is('pengguna') ? 'active' : '' }}" href="/pengguna">Daftar Pengguna</a>
                         </li>
                     @endif
                 @endauth
