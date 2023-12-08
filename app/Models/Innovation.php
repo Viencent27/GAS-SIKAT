@@ -17,4 +17,14 @@ class Innovation extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+
+    protected $fillable = [
+        'user_id',
+        'title',
+        'release_date',
+        'description',
+        'link_video',
+        'category',
+        'photo',
+    ];
 }
