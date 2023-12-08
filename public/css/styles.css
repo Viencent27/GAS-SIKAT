@@ -265,6 +265,23 @@ main .search-pengguna {
     max-width: 400px;
 }
 
+main .pagination .page-item.active .page-link {
+    background-color: #FF6969;
+    border-color: #FF6969;
+    color: white;
+}
+
+main .pagination .page-item .page-link {
+    color: #FF6969;
+}
+
+main .form-control:focus {
+    border-color: #FF6969;
+    box-shadow: 0 0 0 0.2rem rgba(255, 105, 105, 0.25);
+    background-color: transparent;
+}
+
+
 main .tentang-kami p {
     max-width: 550px;
 }

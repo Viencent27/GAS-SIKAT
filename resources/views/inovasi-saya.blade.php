@@ -8,7 +8,7 @@
     <h2 class="title mt-5">Inovasi Saya</h2>
     <div class="mt-5 mx-auto search-inovasi">
         <form action="{{ route('user.innovations') }}" method="GET" class="input-group">
-            <input type="text" name="search" class="form-control" placeholder="Cari Inovasi Saya" aria-describedly="searchBtn">
+            <input type="text" name="search" class="form-control" placeholder="Cari Inovasi Saya" aria-describedly="searchBtn" value="{{ request('search') }}">
             <button class="btn btn-outline-secondary" type="submit" id="searchBtn"><i class="bi bi-search"></i></button>
         </form>
     </div>

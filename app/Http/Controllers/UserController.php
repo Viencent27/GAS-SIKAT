@@ -11,7 +11,7 @@ class UserController extends Controller
     public function index(Request $request)
     {
         $search = $request->input('search');
-        $listUser = User::where('first_name', 'like', "%$search%")->get();
+        $listUser = User::where('first_name', 'like', "%$search%")->paginate(2);
 
         return view('list-pengguna', ['listUser' => $listUser,]);
     }
