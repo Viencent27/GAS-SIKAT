@@ -281,7 +281,6 @@ main .form-control:focus {
     background-color: transparent;
 }
 
-
 main .tentang-kami p {
     max-width: 550px;
 }
@@ -522,6 +521,10 @@ button.ghost {
 
 .font-detail-color {
     color: #FF6969;
+}
+
+#copyButton i {
+    color: white;
 }
 
 .featured-image{
