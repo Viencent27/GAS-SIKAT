@@ -85,4 +85,66 @@ class InovasiController extends Controller
 
         return view('detail-inovasi', ['inovasi' => $inovasi]);
     }
+
+    public function edit($id)
+    {
+        $inovasi = Innovation::find($id);
+
+        if (!$inovasi) {
+            abort(404);
+        }
+
+        return view('form-update-inovasi', ['inovasi' => $inovasi]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'title' => 'required',
+            'release_date' => 'required|date',
+            'description' => 'required',
+            'link_video' => 'required',
+            'category' => 'required',
+            'photo' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $inovasi = Innovation::find($id);
+
+        if (!$inovasi) {
+            abort(404);
+        }
+
+        $inovasi->title = $request->input('title');
+        $inovasi->release_date = $request->input('release_date');
+        $inovasi->description = $request->input('description');
+        $inovasi->link_video = $request->input('link_video');
+        $inovasi->category = $request->input('category');
+
+        if ($request->hasFile('photo')) {
+            $photoPath = $request->file('photo')->store('photos', 'public');
+            $inovasi->photo = $photoPath;
+        }
+
+        $inovasi->save();
+
+        session()->flash('success', 'Inovasi berhasil diperbarui.');
+        return redirect()->route('inovasi.detail', ['id' => $id]);
+    }
+
+    public function destroy($id)
+    {
+        $inovasi = Innovation::find($id);
+
+        if (!$inovasi) {
+            abort(404);
+        }
+
+        if (Storage::disk('public')->exists($inovasi->photo)) {
+            Storage::disk('public')->delete($inovasi->photo);
+        }
+
+        $inovasi->delete();
+
+        return redirect()->route('landing.page')->with('success', 'Inovasi berhasil dihapus.');
+    }
 }
