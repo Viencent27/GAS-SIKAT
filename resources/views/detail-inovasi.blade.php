@@ -5,12 +5,18 @@
         <h2 class="title my-5">{{ $inovasi->title }}</h2>
 
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="successAlert">
                 {{ session('success') }}
             </div>
+
+            <script>
+                setTimeout(function() {
+                    document.getElementById('successAlert').style.display = 'none';
+                }, 5000);
+            </script>
         @endif
 
-        <div class="row justify-content-center mb-4">
+        <div class="row justify-content-center mb-5">
             <div class="col-md-8 ">
                 <div class="row detail">
                     <div class="col-lg-6 mb-4">

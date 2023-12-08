@@ -28,7 +28,9 @@ class InovasiController extends Controller
     public function search(Request $request)
     {
         $search = $request->input('search');
-        $listInovasi = Innovation::where('title', 'like', "%$search%")->paginate(12);
+        $listInovasi = Innovation::where('title', 'like', "%$search%")
+            ->orderBy('release_date', 'desc')
+            ->paginate(12);
 
         return view('list-inovasi', ['listInovasi' => $listInovasi]);
     }
@@ -40,6 +42,7 @@ class InovasiController extends Controller
 
         $listInovasiSaya = Innovation::where('user_id', $user_id)
             ->where('title', 'like', "%$search%")
+            ->orderBy('release_date', 'desc')
             ->paginate(12);
 
         return view('inovasi-saya', ['listInovasiSaya' => $listInovasiSaya]);
@@ -157,6 +160,6 @@ class InovasiController extends Controller
 
         $inovasi->delete();
 
-        return redirect()->route('landing.page')->with('success', 'Inovasi berhasil dihapus.');
+        return redirect()->route('inovasi.search')->with('success', 'Inovasi berhasil dihapus.');
     }
 }

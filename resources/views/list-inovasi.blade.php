@@ -12,6 +12,17 @@
             <button class="btn btn-outline-secondary" type="submit" id="searchBtn"><i class="bi bi-search"></i></button>
         </form>
     </div>
+    @if (session('success'))
+        <div class="alert alert-success mt-4" id="successAlert">
+            {{ session('success') }}
+        </div>
+
+        <script>
+            setTimeout(function() {
+                document.getElementById('successAlert').style.display = 'none';
+            }, 5000);
+        </script>
+    @endif
     <div class="row row-cols-xl-4 row-cols-lg-3 row-cols-md-2 row-cols-1 justify-content-center g-4 my-4">
         @foreach($listInovasi as $inovasi)
             <div class="col">

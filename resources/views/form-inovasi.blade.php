@@ -2,12 +2,18 @@
 
 @section('content')
     <div class="container">
-        <h2 class="title mt-5">Form Tambah Inovasi</h2>
+        <h2 class="title my-5">Form Tambah Inovasi</h2>
 
         @if (session('success'))
-            <div class="alert alert-success">
+            <div class="alert alert-success" id="successAlert">
                 {{ session('success') }}
             </div>
+
+            <script>
+                setTimeout(function() {
+                    document.getElementById('successAlert').style.display = 'none';
+                }, 5000);
+            </script>
         @endif
 
         @if ($errors->any())

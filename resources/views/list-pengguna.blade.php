@@ -13,21 +13,27 @@
 
     <div class="table-responsive">
         <table class="table table-bordered table-hover mt-4">
-            <!-- @if (session('success'))
-                <div class="alert alert-success">
+            @if (session('success'))
+                <div class="alert alert-success mt-4" id="successAlert">
                     {{ session('success') }}
                 </div>
+
+                <script>
+                    setTimeout(function() {
+                        document.getElementById('successAlert').style.display = 'none';
+                    }, 5000);
+                </script>
             @endif
     
             @if ($errors->any())
-                <div class="alert alert-danger">
+                <div class="alert alert-danger mt-4">
                     <ul>
                         @foreach ($errors->all() as $error)
                             <li>{{ $error }}</li>
                         @endforeach
                     </ul>
                 </div>
-            @endif -->
+            @endif
             
             <thead class="table-secondary">
                 <tr>
