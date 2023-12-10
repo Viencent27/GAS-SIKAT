@@ -29,6 +29,9 @@ class InovasiController extends Controller
     {
         $search = $request->input('search');
         $listInovasi = Innovation::where('title', 'like', "%$search%")
+            ->orWhereHas('user', function ($query) use ($search) {
+                $query->where('first_name', 'like', "%$search%");
+            })
             ->orderBy('release_date', 'desc')
             ->paginate(12);
 
