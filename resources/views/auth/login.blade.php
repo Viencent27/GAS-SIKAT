@@ -43,10 +43,12 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">{{ __('Password') }}</label>
-                            <input id="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password" required
-                                autocomplete="new-password">
+                            <label for="passwordSignUp" class="form-label">{{ __('Password') }}</label>
+                            <div class="password-container">
+                                <input id="passwordSignUp" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input type="checkbox" id="showPasswordSignUp" onclick="togglePassword('SignUp')">
+                                <label for="showPasswordSignUp" class="show-password-label">Tampilkan Password</label>
+                            </div>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -72,11 +74,12 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="password" class="form-label">{{ __('Password') }}</label>
-                            <input id="password" type="password" type="password"
-                                class="form-control @error('password') is-invalid @enderror" name="password" required
-                                autocomplete="current-password">
-
+                            <label for="passwordSignIn" class="form-label">{{ __('Password') }}</label>
+                            <div class="password-container">
+                                <input id="passwordSignIn" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input type="checkbox" id="showPasswordSignIn" onclick="togglePassword('SignIn')">
+                                <label for="showPasswordSignIn" class="show-password-label">Tampilkan Password</label>
+                            </div>
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

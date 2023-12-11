@@ -9,3 +9,14 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
 	containerLogin.classList.remove("right-panel-active");
 });
+
+function togglePassword(formType) {
+	var passwordInput = document.getElementById('password' + formType);
+	var showPasswordCheckbox = document.getElementById('showPassword' + formType);
+
+	if (showPasswordCheckbox.checked) {
+			passwordInput.type = 'text';
+	} else {
+			passwordInput.type = 'password';
+	}
+}
