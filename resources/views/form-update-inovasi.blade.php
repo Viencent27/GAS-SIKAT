@@ -2,19 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h2 class="title my-5">Form Tambah Inovasi</h2>
-
-        @if (session('success'))
-            <div class="alert alert-success" id="successAlert">
-                {{ session('success') }}
-            </div>
-
-            <script>
-                setTimeout(function() {
-                    document.getElementById('successAlert').style.display = 'none';
-                }, 5000);
-            </script>
-        @endif
+        <h2 class="title mt-5">Form Edit Inovasi</h2>
 
         @if ($errors->any())
             <div class="alert alert-danger">
@@ -26,46 +14,48 @@
             </div>
         @endif
 
-        <form action="{{ route('inovasi.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('inovasi.update', ['id' => $inovasi->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            @method('PUT')
+
             <div class="mb-3">
                 <label for="title" class="form-label fw-bold">Judul Inovasi</label>
                 <input type="text" class="form-control outline-primary" id="title" name="title"
-                    placeholder="Masukkan Judul" required>
+                    value="{{ $inovasi->title }}" required>
             </div>
             <div class="mb-3">
                 <label for="release_date" class="form-label fw-bold">Tanggal Terbit</label>
-                <input type="date" class="form-control outline-primary" id="release_date" name="release_date" required>
+                <input type="date" class="form-control outline-primary" id="release_date" name="release_date"
+                    value="{{ $inovasi->release_date }}" required>
             </div>
             <div class="mb-3">
                 <label for="description" class="form-label fw-bold">Deskripsi Inovasi</label>
-                <textarea class="form-control outline-primary" id="description" name="description" rows="3"
-                    placeholder="Masukkan Deskripsi Inovasi" required></textarea>
+                <textarea class="form-control outline-primary" id="description" name="description" rows="3" required>{{ $inovasi->description }}</textarea>
             </div>
             <div class="mb-3">
                 <label for="link_video" class="form-label fw-bold">Link Video</label>
                 <input type="text" class="form-control outline-primary" id="link_video" name="link_video"
-                    placeholder="Masukkan Link Video" required>
+                    value="{{ $inovasi->link_video }}" required>
             </div>
             <div class="mb-3">
-                <label for="category" class="form-label fw-bold">kategori</label>
+                <label for="category" class="form-label fw-bold">Kategori</label>
                 <select class="form-select outline-primary" aria-label="Default select example" id="category"
-                    name="category">
-                    <option value="tes1">tes1</option>
-                    <option value="tes2">tes2</option>
+                    name="category" required>
+                    <option value="tes1" {{ $inovasi->category == 'tes1' ? 'selected' : '' }}>Tes 1</option>
+                    <option value="tes2" {{ $inovasi->category == 'tes2' ? 'selected' : '' }}>Tes 2</option>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="photo" class="form-label fw-bold">Upload Gambar</label>
-                <input class="form-control outline-primary" type="file" id="photo" name="photo" placeholder=""
-                    required>
+                <input class="form-control outline-primary" type="file" id="photo" name="photo" placeholder="">
             </div>
             <div class="mb-3 row justify-content-end">
                 <div class="col-auto">
-                    <button type="reset" class="btn btn-outline-primary fw-bold">Batal</button>
+                    <a href="{{ route('inovasi.detail', ['id' => $inovasi->id]) }}"
+                        class="btn btn-outline-primary fw-bold">Batal</a>
                 </div>
                 <div class="col-auto">
-                    <button type="submit" class="btn btn-primary">Tambah</button>
+                    <button type="submit" class="btn btn-primary">Perbarui</button>
                 </div>
             </div>
         </form>

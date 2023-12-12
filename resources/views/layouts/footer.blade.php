@@ -1,7 +1,7 @@
 <footer class="footer">
     <div class="container">
-        <div class="row mt-5 mb-3">
-            <div class="col-5">
+        <div class="row row-cols-md-3 row-cols-1 gap-md-0 gap-4 mt-5 mb-3">
+            <div class="col-md-6 col">
                 <h4>Tentang Kami</h4>
                 <p>
                     GAS-SIKAT adalah aplikasi untuk mempublikasikan dan mempromosikan
@@ -9,14 +9,14 @@
                     berbagai kehidupan
                 </p>
             </div>
-            <div class="col">
+            <div class="col-md-3 col">
                 <h4>Navigasi</h4>
                 <p>Beranda</p>
                 <p>Inovasi</p>
                 <p>Upload Inovasi</p>
                 <p>Tentang Kami</p>
             </div>
-            <div class="col">
+            <div class="col-md-3 col">
                 <h4>Kontak</h4>
                 <p><i class="bi bi-envelope"></i> Email</p>
                 <p><i class="bi bi-instagram"></i> Instagram</p>

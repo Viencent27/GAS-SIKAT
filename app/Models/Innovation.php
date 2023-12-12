@@ -11,5 +11,20 @@ class Innovation extends Model
 
     protected $guarded = ['id'];
 
-    protected $table = 'user_inovations';
+    protected $table = 'inovations';
+
+    public function user()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    protected $fillable = [
+        'user_id',
+        'title',
+        'release_date',
+        'description',
+        'link_video',
+        'category',
+        'photo',
+    ];
 }
