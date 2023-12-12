@@ -38,7 +38,7 @@
 
                     <div class="action-buttons mt-3">
                         <button class="btn btn-secondary" id="copyButton" data-url="{{ url()->current() }}" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top" data-bs-content="Link inovasi berhasil disalin">
-                            <i class="bi bi-share"></i> Bagikan Inovasi
+                            <i class="bi bi-share"></i> Bagikan Link Inovasi
                         </button>
                         @if (auth()->check())
                             @if (auth()->user()->role == 'admin' || (auth()->user()->role == 'user' && auth()->user()->id == $inovasi->user_id))
