@@ -98,7 +98,7 @@ class InovasiController extends Controller
             abort(404);
         }
 
-        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+        if (Auth::user()->id !== $inovasi->user_id && Auth::user()->role !== 'admin') {
             abort(403, 'Unauthorized action.');
         }
 
@@ -122,7 +122,7 @@ class InovasiController extends Controller
             abort(404);
         }
 
-        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+        if (Auth::user()->id !== $inovasi->user_id && Auth::user()->role !== 'admin') {
             abort(403, 'Unauthorized action.');
         }
 
@@ -151,7 +151,7 @@ class InovasiController extends Controller
             abort(404);
         }
 
-        if (Auth::user()->id !== $inovasi->user_id && !Auth::user()->isAdmin()) {
+        if (Auth::user()->id !== $inovasi->user_id && Auth::user()->role !== 'admin') {
             abort(403, 'Unauthorized action.');
         }
 
