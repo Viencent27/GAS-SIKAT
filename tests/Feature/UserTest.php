@@ -18,7 +18,8 @@ class UserTest extends TestCase
     {
         $userData = $this->userData();
         $response = $this->post('/register', $userData);
-        $response->assertStatus(201);
+        $response->assertStatus(302);
+        $response->assertRedirect('/');
         $this->assertDatabaseHas('users', ['email' => $userData['email']]);
     }
 
@@ -28,8 +29,8 @@ class UserTest extends TestCase
         $response = $this->post('/register', $this->userData([
             'email' => $user->email,
         ]));
-        $response->assertStatus(422);
-        $response->assertJsonValidationErrors('email');
+        $response->assertStatus(302);
+        $response->assertSessionHasErrors('email');
     }
 
     public function test_password_is_hashed()
@@ -40,12 +41,13 @@ class UserTest extends TestCase
         $this->assertTrue(Hash::check($userData['password'], $user->password));
     }
 
-    public function test_password_is_hidden_in_response()
+    public function test_password_is_hidden()
     {
         $userData = $this->userData();
-        $response = $this->post('/register', $userData);
-        $response->assertStatus(201);
-        $response->assertJsonMissing(['password']);
+        $this->post('/register', $userData);
+        $user = User::where('email', $userData['email'])->first();
+        $this->assertArrayNotHasKey('password', $user->toArray());
+        $this->assertJsonStringNotEqualsJsonString(json_encode(['password' => $user->password]), $user->toJson());
     }
 
     private function userData($overrides = [])
