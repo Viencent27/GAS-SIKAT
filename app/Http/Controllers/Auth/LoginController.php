@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
@@ -84,8 +85,13 @@ class LoginController extends Controller
 
     protected function sendFailedLoginResponse(Request $request)
     {
-        $user = Auth::user();
-        if ($user && !Hash::check($request->password, $user->password)) {
+        $credentials = $this->credentials($request);
+        if (!User::where($this->username(), $credentials[$this->username()])->exists()) {
+            return redirect()->back()->withInput($request->only('remember'))->withErrors([
+                $this->username() => 'Email tidak ditemukan.',
+            ]);
+        }
+        if (!Auth::attempt($credentials)) {
             return redirect()->back()->withInput($request->only($this->username(), 'remember'))->withErrors([
                 'password' => 'Password yang Anda masukkan salah.',
             ]);

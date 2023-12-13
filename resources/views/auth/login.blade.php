@@ -85,14 +85,14 @@
                                     class="form-control @error('password') is-invalid @enderror" name="password" required
                                     autocomplete="current-password">
                                 <div id="passwordSignInWarning" class="password-warning"></div>
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <input type="checkbox" id="showPasswordSignIn" onclick="togglePassword('SignIn')">
                                 <label for="showPasswordSignIn" class="show-password-label">Tampilkan Password</label>
                             </div>
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
 
 
