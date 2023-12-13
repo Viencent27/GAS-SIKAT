@@ -4,6 +4,11 @@
 @php
     use Carbon\Carbon;
 @endphp
+@if(session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
 <div class="hero">
     <div class="container">
         <div class="row row-cols-md-2 row-cols-1 align-items-center">
