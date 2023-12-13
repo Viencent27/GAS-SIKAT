@@ -7,6 +7,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
@@ -75,7 +76,7 @@ class LoginController extends Controller
 
         $user = $this->guard()->user();
 
-        $request->session()->flash('success', 'Login berhasil. Selamat datang, ' . $user->first_name);
+        session()->flash('success', 'Login berhasil. Selamat datang, ' . $user->first_name);
 
         return $this->authenticated($request, $user)
             ?: redirect()->intended($this->redirectPath());
@@ -101,7 +102,7 @@ class LoginController extends Controller
 
         $request->session()->invalidate();
 
-        $request->session()->flash('success', 'Logout berhasil');
+        session()->flash('success', 'Logout berhasil');
 
         return $this->loggedOut($request) ?: redirect('/');
     }
