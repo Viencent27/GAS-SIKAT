@@ -64,11 +64,9 @@ class UserTest extends TestCase
 
     public function test_user_login_with_incorrect_password(): void
     {
-        $userData = $this->userData();
-        $this->post('/register', $userData);
-        $this->post('/logout');
+        $user = User::factory()->create();
         $response = $this->post('/login', [
-            'email' => $userData['email'],
+            'email' => $user->email,
             'password' => 'invalid',
         ]);
         $response->assertSessionHasErrors([
@@ -78,12 +76,10 @@ class UserTest extends TestCase
 
     public function test_user_login_with_incorrect_email(): void
     {
-        $userData = $this->userData();
-        $this->post('/register', $userData);
-        $this->post('/logout');
+        $user = User::factory()->create();
         $response = $this->post('/login', [
             'email' => 'invalid@example.com',
-            'password' => $userData['password'],
+            'password' => 'password',
         ]);
         $response->assertSessionHasErrors([
             'email' => 'Email tidak ditemukan.',
@@ -92,16 +88,14 @@ class UserTest extends TestCase
 
     public function test_user_login_with_correct_credentials(): void
     {
-        $userData = $this->userData();
-        $this->post('/register', $userData);
-        $this->post('/logout');
+        $user = User::factory()->create();
         $response = $this->post('/login', [
-            'email' => $userData['email'],
-            'password' => $userData['password'],
+            'email' => $user->email,
+            'password' => 'password',
         ]);
         $response->assertStatus(302);
         $response->assertRedirect('/');
-        $response->assertSessionHas('success', 'Login berhasil. Selamat datang, ' . $userData['first_name']);
+        $response->assertSessionHas('success', 'Login berhasil. Selamat datang, ' . $user->first_name);
     }
 
     private function userData($overrides = [])
