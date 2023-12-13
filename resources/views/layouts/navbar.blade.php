@@ -6,7 +6,7 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <hr class="d-lg-none my-2">
-            <ul class="navbar-nav mx-auto mb-lg-0 mb-2">
+            <ul class="navbar-nav mx-auto mb-lg-0 mb-3">
                 <li class="nav-item">
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
                 </li>
