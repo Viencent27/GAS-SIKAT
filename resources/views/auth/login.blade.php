@@ -33,19 +33,19 @@
                             </div>
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">{{ __('Email') }}</label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
-                                name="email" value="{{ old('email') }}" required autocomplete="email">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                            <label for="emailSignUp" class="form-label">{{ __('Email') }}</label>
+                            <input id="emailSignUp" type="email" class="form-control" name="email" value=""
+                                required autocomplete="email">
                         </div>
                         <div class="mb-3">
                             <label for="passwordSignUp" class="form-label">{{ __('Password') }}</label>
                             <div class="password-container">
-                                <input id="passwordSignUp" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                                <input id="passwordSignUp" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="new-password" minlength="8">
+                                <div id="passwordWarning" class="password-warning">
+                                    <p>Password harus memiliki minimal 8 karakter</p>
+                                </div>
                                 <input type="checkbox" id="showPasswordSignUp" onclick="togglePassword('SignUp')">
                                 <label for="showPasswordSignUp" class="show-password-label">Tampilkan Password</label>
                             </div>
@@ -54,8 +54,14 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
+                            @error('password.minlength')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
-                        <button type="submit" class="btn btn-primary">{{ __('Daftar') }}</button>
+
+                        <button type="submit" id="registerButton" class="btn btn-primary">{{ __('Daftar') }}</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
@@ -63,10 +69,9 @@
                         @csrf
                         <h2 class="mb-5">Login</h2>
                         <div class="mb-3">
-                            <label for="email" class="form-label">{{ __('Email') }}</label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                            <label for="emailSignIn" class="form-label">{{ __('Email') }}</label>
+                            <input id="emailSignIn" type="email" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
                             @error('email')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -76,7 +81,10 @@
                         <div class="mb-3">
                             <label for="passwordSignIn" class="form-label">{{ __('Password') }}</label>
                             <div class="password-container">
-                                <input id="passwordSignIn" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="passwordSignIn" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="current-password">
+                                <div id="passwordSignInWarning" class="password-warning"></div>
                                 <input type="checkbox" id="showPasswordSignIn" onclick="togglePassword('SignIn')">
                                 <label for="showPasswordSignIn" class="show-password-label">Tampilkan Password</label>
                             </div>
@@ -87,11 +95,12 @@
                             @enderror
                         </div>
 
+
                         @if (Route::has('password.request'))
-                            <a class="btn btn-link"
-                                href="{{ route('password.request') }}">{{ __('Lupa Password?') }}</a>
+                            <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Lupa Password?') }}</a>
                         @endif
-                        <a class="btn btn-link mobile-only-btn" onclick="window.location.href='/register'">Belum punya akun?</a>
+                        <a class="btn btn-link mobile-only-btn" onclick="window.location.href='/register'">Belum punya
+                            akun?</a>
                         <button type="submit" class="btn btn-primary">{{ __('Login') }}</button>
                     </form>
                 </div>

@@ -568,3 +568,9 @@ button.ghost {
 	height: 100%;
     width: 100%;
 }
+
+.password-warning p{
+        margin-top: 5px;
+        color: red;
+        font-size: 14px;
+    }

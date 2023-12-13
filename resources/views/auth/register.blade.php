@@ -45,13 +45,23 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="passwordSignIn" class="form-label">{{ __('Password') }}</label>
+                            <label for="passwordSignUp" class="form-label">{{ __('Password') }}</label>
                             <div class="password-container">
-                                <input id="passwordSignIn" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                <input type="checkbox" id="showPasswordSignIn" onclick="togglePassword('SignIn')">
-                                <label for="showPasswordSignIn" class="show-password-label">Tampilkan Password</label>
+                                <input id="passwordSignUp" type="password"
+                                    class="form-control @error('password') is-invalid @enderror" name="password" required
+                                    autocomplete="new-password" minlength="8">
+                                <div id="passwordWarning" class="password-warning">
+                                    <p>Password harus memiliki minimal 8 karakter</p>
+                                </div>
+                                <input type="checkbox" id="showPasswordSignUp" onclick="togglePassword('SignUp')">
+                                <label for="showPasswordSignUp" class="show-password-label">Tampilkan Password</label>
                             </div>
                             @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                            @error('password.minlength')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
