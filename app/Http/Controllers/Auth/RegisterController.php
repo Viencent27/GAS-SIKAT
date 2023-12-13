@@ -76,7 +76,7 @@ class RegisterController extends Controller
 
     protected function registered(Request $request, $user)
     {
-        $request->session()->flash('success', 'Pendaftaran berhasil. Selamat datang, ' . $user->first_name);
+        session()->flash('success', 'Pendaftaran berhasil. Selamat datang, ' . $user->first_name);
 
         return redirect($this->redirectPath());
     }
