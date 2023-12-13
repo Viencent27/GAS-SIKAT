@@ -4,10 +4,16 @@
 @php
     use Carbon\Carbon;
 @endphp
-@if(session('success'))
-    <div class="alert alert-success">
+@if (session('success'))
+    <div class="alert alert-success mb-0" id="successAlert">
         {{ session('success') }}
     </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('successAlert').style.display = 'none';
+        }, 5000);
+    </script>
 @endif
 <div class="hero">
     <div class="container">
