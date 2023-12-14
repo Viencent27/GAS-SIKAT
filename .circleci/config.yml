@@ -1,6 +1,5 @@
 version: 2.1
-orbs:
-  browser-tools: circleci/browser-tools@1.4.6
+
 jobs:
   test:
     docker:
@@ -13,7 +12,6 @@ jobs:
           MYSQL_DATABASE: gas_sikat_testing
     steps:
       - checkout
-      - browser-tools/install-browser-tools
       # Composer cache
       - restore_cache:
           keys:
@@ -32,11 +30,8 @@ jobs:
             cp .env.testing .env.dusk.local
             php artisan migrate --env=testing
       - run:
-          name: Install Dusk and Update Chrome Drivers
-          command: |
-            composer require --dev laravel/dusk
-            composer require --dev staudenmeir/dusk-updater
-            php artisan dusk:update --detect
+          name: Install Chrome Drivers
+          command: php artisan dusk:chrome-driver
       - run:
           name: Run Http Tests
           command: ./vendor/bin/phpunit tests/Feature
