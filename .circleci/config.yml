@@ -2,9 +2,16 @@ version: 2.1
 orbs:
   browser-tools: circleci/browser-tools@1.1
 jobs:
-  install-deps:
+  test:
     docker:
       - image: cimg/php:8.1.2-browsers
+        environment:
+          DB_CONNECTION: mysql
+          DB_HOST: 127.0.0.1
+          DB_PORT: 3306
+          DB_DATABASE: gas_sikat_testing
+          DB_USERNAME: root
+          DB_PASSWORD: ""
     steps:
       - checkout
       - browser-tools/install-browser-tools
@@ -34,18 +41,6 @@ jobs:
           paths:
             - node-modules
             - ~/.yarn
-  test:
-    docker:
-      - image: cimg/php:8.1.2-browsers
-        environment:
-          DB_CONNECTION: mysql
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_DATABASE: gas_sikat_testing
-          DB_USERNAME: root
-          DB_PASSWORD: ""
-    steps:
-      - install-deps
       - run:
           name: Setup Environment
           command: |
