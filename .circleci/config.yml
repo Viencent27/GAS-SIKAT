@@ -47,7 +47,7 @@ jobs:
             cp .env.testing .env
             cp .env.testing .env.dusk.local
             php artisan key:generate
-            mysql -h $DB_HOST -u $DB_USERNAME -e "CREATE DATABASE $DB_DATABASE"
+            php artisan migrate --env=testing
       - run:
           name: Run Http Tests
           command: ./vendor/bin/phpunit tests/Feature
