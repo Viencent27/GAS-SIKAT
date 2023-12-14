@@ -5,13 +5,13 @@ jobs:
   test:
     docker:
       - image: cimg/php:8.1.2-browsers
+      - image: circleci/mysql:5.7
         environment:
-          DB_CONNECTION: mysql
-          DB_HOST: 127.0.0.1
-          DB_PORT: 3306
-          DB_DATABASE: gas_sikat_testing
-          DB_USERNAME: root
-          DB_PASSWORD: ""
+          MYSQL_ALLOW_EMPTY_PASSWORD: true
+          MYSQL_ROOT_PASSWORD: ubuntu
+          MYSQL_USER: ubuntu
+          MYSQL_PASSWORD: ""
+          MYSQL_DATABASE: gas_sikat_testing
     steps:
       - checkout
       - browser-tools/install-browser-tools
@@ -30,17 +30,6 @@ jobs:
           key: composer-v1-{{ checksum "composer.lock" }}
           paths:
             - vendor
-      # Node cache
-      - restore_cache:
-          keys:
-            - node-v4-{{ checksum "package.json" }}
-            - node-v4-
-      - run: npm install
-      - save_cache:
-          key: node-v4-{{ checksum "package.json" }}
-          paths:
-            - node-modules
-            - ~/.yarn
       - run:
           name: Setup Environment
           command: |
