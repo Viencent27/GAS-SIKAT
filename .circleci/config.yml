@@ -5,11 +5,11 @@ jobs:
   test:
     docker:
       - image: cimg/php:8.1.2-browsers
-      - image: circleci/mysql:5.7
+      - image: circleci/mysql:8.0.4
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_PASSWORD: ubuntu
-          MYSQL_USER: ubuntu
+          MYSQL_ROOT_PASSWORD: ""
+          MYSQL_USER: root
           MYSQL_PASSWORD: ""
           MYSQL_DATABASE: gas_sikat_testing
     steps:
