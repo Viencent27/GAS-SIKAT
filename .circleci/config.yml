@@ -32,6 +32,12 @@ jobs:
             cp .env.testing .env.dusk.local
             php artisan migrate --env=testing
       - run:
+          name: Install Dusk and Update Chrome Drivers
+          command: |
+            composer require --dev laravel/dusk
+            composer require --dev staudenmeir/dusk-updater
+            php artisan dusk:update --detect
+      - run:
           name: Run Http Tests
           command: ./vendor/bin/phpunit tests/Feature
       - run:
