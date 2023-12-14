@@ -5,21 +5,10 @@ jobs:
   test:
     docker:
       - image: cimg/php:8.1.2-browsers
-      - image: circleci/mysql:8.0.4
-        environment:
-          MYSQL_ALLOW_EMPTY_PASSWORD: true
-          MYSQL_ROOT_PASSWORD: ""
-          MYSQL_USER: root
-          MYSQL_PASSWORD: ""
-          MYSQL_DATABASE: gas_sikat_testing
+      - image: cimg/mysql:8.0.28
     steps:
       - checkout
       - browser-tools/install-browser-tools
-      - run:
-          name: Install Node
-          command: |
-            curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-            sudo apt-get install -y nodejs
       # Composer cache
       - restore_cache:
           keys:
@@ -33,9 +22,9 @@ jobs:
       - run:
           name: Setup Environment
           command: |
+            php artisan key:generate --env=testing
             cp .env.testing .env
             cp .env.testing .env.dusk.local
-            php artisan key:generate
             php artisan migrate --env=testing
       - run:
           name: Run Http Tests
