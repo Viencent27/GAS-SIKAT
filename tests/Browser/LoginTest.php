@@ -11,7 +11,11 @@ class LoginTest extends DuskTestCase
 {
     use DatabaseMigrations;
     
-    public function testUserCanLoginWithValidCredentials(): void
+    /**
+     *  @test 
+     *  @group login
+     */
+    public function user_can_login_with_valid_credentials(): void
     {
         $user = User::factory()->create();
         $this->browse(function (Browser $browser) use ($user) {
@@ -25,7 +29,11 @@ class LoginTest extends DuskTestCase
         });
     }
 
-    function testUserCannotLoginWithInvalidEmail(): void
+    /**
+     *  @test 
+     *  @group login
+     */
+    function user_cannot_login_with_invalid_email(): void
     {
         User::factory()->create();
         $this->browse(function (Browser $browser) {
@@ -38,7 +46,11 @@ class LoginTest extends DuskTestCase
         });
     }
 
-    function testUserCannotLoginWithInvalidPassword(): void
+    /**
+     *  @test 
+     *  @group login
+     */
+    function user_cannot_login_with_invalid_password(): void
     {
         $user = User::factory()->create();
         $this->browse(function (Browser $browser) use ($user) {
