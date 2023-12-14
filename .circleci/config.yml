@@ -9,7 +9,6 @@ jobs:
         environment:
           MYSQL_ALLOW_EMPTY_PASSWORD: true
           MYSQL_ROOT_PASSWORD: ""
-          MYSQL_USER: root
           MYSQL_PASSWORD: ""
           MYSQL_DATABASE: gas_sikat_testing
     steps:
