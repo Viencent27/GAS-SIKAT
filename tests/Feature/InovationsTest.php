@@ -4,7 +4,7 @@ namespace Tests\Feature;
 
 use App\Models\Innovation;
 use App\Models\User;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
@@ -12,10 +12,8 @@ use Tests\TestCase;
 
 class InovationsTest extends TestCase
 {
-    use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     */
+    use DatabaseMigrations;
+    
     public function test_create_inovation(): void
     {
         $user = User::factory()->create();

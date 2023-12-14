@@ -2,19 +2,17 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 use App\Models\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserTest extends TestCase
 {
-    use RefreshDatabase;
-    /**
-     * A basic feature test example.
-     */
+    use DatabaseMigrations;
+    
     public function test_user_can_be_created(): void
     {
         $userData = $this->userData();
