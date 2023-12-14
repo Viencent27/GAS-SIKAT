@@ -1,5 +1,6 @@
 version: 2.1
-
+orbs:
+  browser-tools: circleci/browser-tools@1.4.6
 jobs:
   test:
     docker:
@@ -12,6 +13,7 @@ jobs:
           MYSQL_DATABASE: gas_sikat_testing
     steps:
       - checkout
+      - browser-tools/install-chrome
       # Composer cache
       - restore_cache:
           keys:
