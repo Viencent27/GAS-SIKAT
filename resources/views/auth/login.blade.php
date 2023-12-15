@@ -60,8 +60,7 @@
                                 </span>
                             @enderror
                         </div>
-
-                        <button type="submit" class="btn btn-primary">{{ __('Daftar') }}</button>
+                        <button type="submit" id="registerButton" class="btn btn-primary">{{ __('Daftar') }}</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">
@@ -86,15 +85,14 @@
                                     autocomplete="current-password">
                                 <div id="passwordSignInWarning" class="password-warning"></div>
                                 <input type="checkbox" id="showPasswordSignIn" onclick="togglePassword('SignIn')">
+                                @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
                                 <label for="showPasswordSignIn" class="show-password-label">Tampilkan Password</label>
                             </div>
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
-
 
                         @if (Route::has('password.request'))
                             <a class="btn btn-link" href="{{ route('password.request') }}">{{ __('Lupa Password?') }}</a>
