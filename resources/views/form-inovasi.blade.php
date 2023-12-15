@@ -51,8 +51,13 @@
                 <label for="category" class="form-label fw-bold">kategori</label>
                 <select class="form-select outline-primary" aria-label="Default select example" id="category"
                     name="category">
-                    <option value="tes1">tes1</option>
-                    <option value="tes2">tes2</option>
+                    <option value="Teknologi">Teknologi</option>
+                    <option value="Pendidikan">Pendidikan</option>
+                    <option value="Lingkungan">Lingkungan</option>
+                    <option value="Kesehatan">Kesehatan</option>
+                    <option value="Ekonomi">Ekonomi</option>
+                    <option value="Politik">Politik</option>
+
                 </select>
             </div>
             <div class="mb-3">
