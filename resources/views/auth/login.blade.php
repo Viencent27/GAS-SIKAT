@@ -37,6 +37,12 @@
                             <input id="emailSignUp" type="email" class="form-control @error('email') is-invalid @enderror"
                                 name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                             @error('email')
+                                <script>
+                                    const containerLogin = document.getElementById('container-login');
+                                    if ("{{ $message }}" == "The email has already been taken.") {
+                                        containerLogin.classList.add("right-panel-active");
+                                    }
+                                </script>
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
