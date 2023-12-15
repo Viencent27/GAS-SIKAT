@@ -26,7 +26,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <img src="https://drive.google.com/uc?id=13Qc3AV2uILSx2zsnOYGZ07IiOgjVOxUt" alt="">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Lintang Yandi Nugraha</h5>
@@ -50,7 +50,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="">
+                    <img src="https://drive.google.com/uc?id=17EalpFE1Ux0XY-oAKjyoWHKgmn84B2ap" alt="">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Dhimas Jatiwibowo</h5>

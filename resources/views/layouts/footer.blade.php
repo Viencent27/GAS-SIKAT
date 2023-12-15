@@ -11,10 +11,12 @@
             </div>
             <div class="col-md-3 col">
                 <h4>Navigasi</h4>
-                <p>Beranda</p>
-                <p>Inovasi</p>
-                <p>Upload Inovasi</p>
-                <p>Tentang Kami</p>
+                <div class="d-flex flex-column gap-3 mb-4">
+                    <a href="/">Beranda</a>
+                    <a href="/inovasi">Inovasi</a>
+                    <a href="/upload-inovasi">Upload Inovasi</a>
+                    <a href="/tentang-kami">Tentang Kami</a>
+                </div>
             </div>
             <div class="col-md-3 col">
                 <h4>Kontak</h4>
