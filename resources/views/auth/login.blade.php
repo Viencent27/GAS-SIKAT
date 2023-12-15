@@ -34,8 +34,13 @@
                         </div>
                         <div class="mb-3">
                             <label for="emailSignUp" class="form-label">{{ __('Email') }}</label>
-                            <input id="emailSignUp" type="email" class="form-control" name="email" value=""
-                                required autocomplete="email">
+                            <input id="emailSignUp" type="email" class="form-control @error('email') is-invalid @enderror"
+                                name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                            @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label for="passwordSignUp" class="form-label">{{ __('Password') }}</label>
@@ -54,14 +59,9 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                            @error('password.minlength')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
                         </div>
 
-                        <button type="submit" id="registerButton" class="btn btn-primary">{{ __('Daftar') }}</button>
+                        <button type="submit" class="btn btn-primary">{{ __('Daftar') }}</button>
                     </form>
                 </div>
                 <div class="form-container sign-in-container">

@@ -41,8 +41,10 @@
                 <label for="category" class="form-label fw-bold">Kategori</label>
                 <select class="form-select outline-primary" aria-label="Default select example" id="category"
                     name="category" required>
-                    <option value="tes1" {{ $inovasi->category == 'tes1' ? 'selected' : '' }}>Tes 1</option>
-                    <option value="tes2" {{ $inovasi->category == 'tes2' ? 'selected' : '' }}>Tes 2</option>
+                    <option value="Pendidikan" {{ $inovasi->category == 'Pendidikan' ? 'selected' : '' }}>Pendidikan</option>
+                    <option value="Lingkungan" {{ $inovasi->category == 'Lingkungan' ? 'selected' : '' }}>Lingkungan</option>
+                    <option value="Kesehatan" {{ $inovasi->category == 'Kesehatan' ? 'selected' : '' }}>Kesehatan</option>
+
                 </select>
             </div>
             <div class="mb-3">
