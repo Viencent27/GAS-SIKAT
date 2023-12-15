@@ -24,7 +24,8 @@ class LoginTest extends DuskTestCase
                     ->type('#passwordSignIn', 'password')
                     ->click('.sign-in-container form > button')
                     ->assertPathIs('/')
-                    ->assertSee('Login berhasil. Selamat datang, ' . $user->first_name);
+                    ->assertSee('Login berhasil. Selamat datang, ' . $user->first_name)
+                    ->assertSee('Inovasi Saya');
             $browser->logout();
         });
     }
@@ -60,6 +61,25 @@ class LoginTest extends DuskTestCase
                     ->click('.sign-in-container form > button')
                     ->assertPathIs('/login')
                     ->assertSee('Password yang Anda masukkan salah.');
+        });
+    }
+
+    /**
+     *  @test 
+     *  @group login
+     */
+    public function admin_can_login_with_valid_credentials(): void
+    {
+        $user = User::factory()->create(['role' => 'admin']);
+        $this->browse(function (Browser $browser) use ($user) {
+            $browser->visit('/login')
+                    ->type('#emailSignIn', $user->email)
+                    ->type('#passwordSignIn', 'password')
+                    ->click('.sign-in-container form > button')
+                    ->assertPathIs('/')
+                    ->assertSee('Login berhasil. Selamat datang, ' . $user->first_name)
+                    ->assertSee('Daftar Pengguna');
+            $browser->logout();
         });
     }
 }
