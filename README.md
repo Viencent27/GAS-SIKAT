@@ -31,7 +31,8 @@
 - Fitur Edit dan Hapus Inovasi: Memperbolehkan admin mengelola postingan inovasi yang telah diunggah oleh semua user
 
 ## Screenshot Website
-
+<img src="https://github.com/Viencent27/GAS-SIKAT/assets/112526506/8a180834-8205-40b3-ac9d-032ccd114e4e" alt="GAS-SIKAT Desktop" height="250">
+<img src="https://github.com/Viencent27/GAS-SIKAT/assets/112526506/d62ef596-eaec-476b-b279-f02015426fb1" alt="GAS-SIKAT Mobile" height="250">
 
 ## User Guide (Cara Instalasi Proyek Laravel GAS-SIKAT)
 ### Persiapan
