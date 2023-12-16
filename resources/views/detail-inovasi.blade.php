@@ -33,7 +33,7 @@
                     <h4>Tanggal Terbit</h4>
                     <p>{{ Carbon::parse($inovasi->release_date)->format('j F Y') }}</p>
                     <h4>Link Video</h4>
-                    <a href="{{ url('http://' . $inovasi->link_video) }}" target="_blank">{{ $inovasi->link_video }}</a>
+                    <a href="{{ url($inovasi->link_video) }}" target="_blank">{{ $inovasi->link_video }}</a>
                     <br>
 
                     <div class="action-buttons mt-3">
