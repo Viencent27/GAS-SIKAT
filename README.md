@@ -52,7 +52,12 @@ Sebelum memulai instalasi, pastikan bahwa sistem Anda telah memenuhi persyaratan
 9. Proyek Laravel GAS-SIKAT sekarang sudah dapat anda akses melalui http://localhost:8000 pada browser
 
 ## User Guide (Cara Upload Inovasi di GAS-SIKAT)
-1. 
+1. Silahkan login melalui tautan berikut https://gas-sikat.biz.id/login. Jika belum memiliki akun silahkan registrasi terlebih dahulu
+2. Jika sudah login maka sekarang Anda dapat mengakses menu Upload Inovasi. Kemudian isi form sesuai dengan data inovasi Anda dan pilih tombol Tambah
+3. Ketika berhasil maka Anda akan mendapatkan notifikasi sukses. Jika anda ingin mengeceknya anda dapat menuju ke halaman Inovasi Saya
+4. Anda sudah berhasil menambahkan inovasi di website GAS-SIKAT. Anda juga bisa memanfaatkan fitur edit dan hapus dari setiap postingan inovasi milik Anda dengan menuju ke halaman Detail Inovasi
 
 ## User Guide (Cara Login untuk Admin)
-1. 
+1. Proses login untuk admin sama seperti user biasa, namun untuk mendapatkan akses sebagai admin Anda perlu meminta super-admin untuk menjadikan akun anda sebagai role admin
+2. Jika Anda sudah mendapatkan role admin maka Anda akan dapat mengakses halaman Daftar Pengguna untuk melakukan manajemen semua akun user dan admin. Anda juga dapat mengubah role user biasa menjadi admin
+3. Anda dapat menggunakan fitur edit dan hapus untuk seluruh data inovasi yang telah diunggah oleh user di GAS-SIKAT
