@@ -14,7 +14,8 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://drive.google.com/uc?id=1etQJqrApeI7x3o80Oe1Rxo1Onfqv3Ugl" alt="Anatasya">
+                    <img src="{{ asset('images/tim-capstone/Anatasya.jpg') }}" alt="Anatasya">
+                    <!-- <img src="https://drive.google.com/uc?id=1etQJqrApeI7x3o80Oe1Rxo1Onfqv3Ugl" alt="Anatasya"> -->
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Anatasya Lingkanwene Ering</h5>
@@ -26,7 +27,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://drive.google.com/uc?id=13Qc3AV2uILSx2zsnOYGZ07IiOgjVOxUt" alt="Yandi">
+                    <img src="{{ asset('images/tim-capstone/Yandi.jpg') }}" alt="Yandi">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Lintang Yandi Nugraha</h5>
@@ -38,7 +39,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://drive.google.com/uc?id=1YWNg38S-PJRC1goSY32OaI1W5UfZajEe" alt="Sukron">
+                    <img src="{{ asset('images/tim-capstone/Sukron.jpg') }}" alt="Sukron">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Sukron Hadi Prasojo</h5>
@@ -50,7 +51,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://drive.google.com/uc?id=1xJjuAR0WTM5wiq3tOKezEUrfhT_OwGhr" alt="Dhimas">
+                    <img src="{{ asset('images/tim-capstone/Dhimas.jpg') }}" alt="Dhimas">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Dhimas Jatiwibowo</h5>
@@ -62,7 +63,7 @@
         <div class="col">
             <div class="card h-100 shadow-sm team-member text-center">
                 <div class="position-relative overflow-hidden">
-                    <img src="https://drive.google.com/uc?id=1rdQ226u16w8woFGlFXfCQ4HKnLkZ3PRv" alt="Viencent">
+                    <img src="{{ asset('images/tim-capstone/Viencent.jpg') }}" alt="Viencent">
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">Viencent</h5>
